@@ -1356,17 +1356,15 @@ if (process.env.NODE_ENV === 'production') {
 
 var jsxRuntimeExports = jsxRuntime.exports;
 
-var styles = ".btn {\n  width: 100%;\n  height: 100%;\n  font-size: 14px;\n  padding: 8px;\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  border: 0;\n  border-radius: 5px;\n}\n\n.radius {\n  border-radius: 50%;\n}\n\n.main {\n  background: #0f2136;\n  color: #f8744a;\n}\n.main:hover {\n  background: rgb(10, 20, 40);\n}\n\n.base {\n  background: #ffffff;\n  color: #f8744a;\n}\n.base:hover {\n  background: rgb(240, 240, 240);\n}\n\n.clear {\n  background: rgba(0, 0, 0, 0);\n  color: #f8744a;\n}";
-
 function Button(props) {
     var getClassName = function () {
-        var classes = [styles.btn];
+        var classes = ["btn"];
         if (props.outline)
-            classes.push(styles.outline);
+            classes.push("outline");
         if (props.color)
-            classes.push(styles[props.color]);
+            classes.push(props.color);
         else
-            classes.push(styles['main']);
+            classes.push('main');
         return classes.join(' ');
     };
     return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx("button", { className: getClassName(), onClick: function () { return props.onClick(); }, children: props.label }) }));

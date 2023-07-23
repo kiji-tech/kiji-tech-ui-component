@@ -22,7 +22,7 @@ const conf = {
     external: ["react", /@babel\/runtime/],
     plugins: [
         scss({
-            output: false,
+            output: 'dist/index.css',
         }),
         typescript(),
         // these are babel comfigurations

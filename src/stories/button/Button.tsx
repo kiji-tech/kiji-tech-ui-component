@@ -1,4 +1,4 @@
-import styles from './Button.module.scss';
+import './Button.scss';
 
 export type ButtonProps = {
     label: string,
@@ -10,10 +10,10 @@ export type ButtonProps = {
 
 export default function Button(props: ButtonProps) {
     const getClassName = (): string => {
-        let classes: string[] = [styles.btn];
-        if (props.outline) classes.push(styles.outline);
-        if (props.color) classes.push(styles[props.color]);
-        else classes.push(styles['main']);
+        let classes: string[] = ["btn"];
+        if (props.outline) classes.push("outline");
+        if (props.color) classes.push(props.color);
+        else classes.push('main');
 
         return classes.join(' ');
     }
