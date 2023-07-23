@@ -9,7 +9,7 @@
         "build-storybook": "storybook build"
     },
     "keywords": [],
-    "author": "",
+    "author": "Shinji Harada",
     "license": "ISC",
     "devDependencies": {
         "@babel/cli": "^7.22.9",
@@ -20,25 +20,32 @@
         "@rollup/plugin-babel": "^6.0.3",
         "@rollup/plugin-commonjs": "^25.0.3",
         "@rollup/plugin-node-resolve": "^15.1.0",
+        "@rollup/plugin-typescript": "^11.1.2",
+        "@storybook/addon-actions": "^7.1.0",
         "@storybook/addon-essentials": "^7.1.0",
-        "@storybook/addon-interactions": "^7.1.0",
         "@storybook/addon-links": "^7.1.0",
-        "@storybook/addon-onboarding": "^1.0.8",
-        "@storybook/blocks": "^7.1.0",
         "@storybook/react": "^7.1.0",
-        "@storybook/react-webpack5": "^7.1.0",
-        "@storybook/testing-library": "^0.2.0",
+        "@types/babel__core": "^7.20.1",
+        "@types/babel__plugin-transform-runtime": "^7.9.2",
+        "@types/babel__preset-env": "^7.9.2",
+        "@types/eslint": "^8.44.0",
+        "@typescript-eslint/eslint-plugin": "^6.1.0",
+        "@typescript-eslint/parser": "^6.1.0",
         "autoprefixer": "^10.4.14",
-        "prop-types": "^15.8.1",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
+        "babel-loader": "^9.1.3",
+        "eslint": "^8.45.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-jsx-a11y": "^6.7.1",
+        "eslint-plugin-react": "^7.33.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
         "rollup": "^3.26.3",
         "rollup-plugin-delete": "^2.0.0",
         "rollup-plugin-sourcemaps": "^0.6.3",
-        "rollup-plugin-styles": "^4.0.0"
+        "rollup-plugin-styles": "^4.0.0",
+        "typescript": "^5.1.6"
     },
     "dependencies": {
-        "@babel/runtime": "^7.22.6",
-        "storybook": "^7.1.0"
+        "@babel/runtime": "^7.22.6"
     }
 }
