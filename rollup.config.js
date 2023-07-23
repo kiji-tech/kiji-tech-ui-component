@@ -25,7 +25,7 @@ const conf = {
             exclude: 'node_modules/**',
             plugins: ['@babel/transform-runtime'],
             babelHelpers: 'runtime',
-            configFile: path.resolve(__dirname, ".babelrc"),
+            // configFile: path.resolve(__dirname, ".babelrc"),
         }),
         // this adds sourcemaps
         sourcemaps(),

@@ -1,8 +1,8 @@
 import React from "react";
-import { Size } from "../Size"
+import { Size } from "./types/Size"
 import './button.css';
 
-export const Button = ({ label, color, size }: ButtonProps) => {
+const Button = ({ label, color, size }: ButtonProps) => {
     return (
         <button
             className={`btn ${color} ${size}`}
@@ -15,3 +15,5 @@ export type ButtonProps = {
     size: Size,
     label: string,
 }
+
+export default Button;
