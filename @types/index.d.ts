@@ -1,5 +1,5 @@
 // my-component.d.ts
-import { ButtonProps } from './stories/Button';
+import { ButtonProps } from '../src/stories/Button';
 import React from 'react';
 
 

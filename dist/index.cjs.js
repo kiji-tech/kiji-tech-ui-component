@@ -1366,11 +1366,4 @@ var Button = function (_a) {
     return (jsxRuntimeExports.jsx("button", { className: "btn ".concat(color, " ").concat(size), children: label }));
 };
 
-var returnLibrary = function () {
-    return {
-        Button: Button
-    };
-};
-var index = returnLibrary();
-
-module.exports = index;
+exports.Button = Button;
