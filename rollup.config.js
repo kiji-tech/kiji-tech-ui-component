@@ -5,6 +5,7 @@ import del from 'rollup-plugin-delete';
 import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
+import scss from 'rollup-plugin-scss'; // rollup-plugin-scssをインポート
 
 const path = require('path');
 const autoprefixer = require('autoprefixer');
@@ -20,6 +21,9 @@ const conf = {
     // this externelizes react to prevent rollup from compiling it
     external: ["react", /@babel\/runtime/],
     plugins: [
+        scss({
+            output: false,
+        }),
         typescript(),
         // these are babel comfigurations
         babel({

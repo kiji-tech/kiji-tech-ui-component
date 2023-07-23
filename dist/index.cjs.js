@@ -1356,14 +1356,20 @@ if (process.env.NODE_ENV === 'production') {
 
 var jsxRuntimeExports = jsxRuntime.exports;
 
-var e=[],t=[];function n(n,r){if(n&&"undefined"!=typeof document){var a,s=!0===r.prepend?"prepend":"append",d=!0===r.singleTag,i="string"==typeof r.container?document.querySelector(r.container):document.getElementsByTagName("head")[0];if(d){var u=e.indexOf(i);-1===u&&(u=e.push(i)-1,t[u]={}),a=t[u]&&t[u][s]?t[u][s]:t[u][s]=c();}else a=c();65279===n.charCodeAt(0)&&(n=n.substring(1)),a.styleSheet?a.styleSheet.cssText+=n:a.appendChild(document.createTextNode(n));}function c(){var e=document.createElement("style");if(e.setAttribute("type","text/css"),r.attributes)for(var t=Object.keys(r.attributes),n=0;n<t.length;n++)e.setAttribute(t[n],r.attributes[t[n]]);var a="prepend"===s?"afterbegin":"beforeend";return i.insertAdjacentElement(a,e),e}}
+var styles = ".btn {\n  width: 100%;\n  height: 100%;\n  font-size: 14px;\n  padding: 8px;\n  display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  border: 0;\n  border-radius: 5px;\n}\n\n.radius {\n  border-radius: 50%;\n}\n\n.main {\n  background: #0f2136;\n  color: #f8744a;\n}\n.main:hover {\n  background: rgb(10, 20, 40);\n}\n\n.base {\n  background: #ffffff;\n  color: #f8744a;\n}\n.base:hover {\n  background: rgb(240, 240, 240);\n}\n\n.clear {\n  background: rgba(0, 0, 0, 0);\n  color: #f8744a;\n}";
 
-var css = ".primary {\n    background-color : #6178d6;\n    color : white;\n}\n\n.clear {\n    background-color : #f7f4f4;\n    color : black;\n}\n\n.btn {\n    border : 0;\n    border-radius : 8px;\n    padding : 12px;\n}\n\n\n/* size */\n.xs {\n    font-size : 4px;\n}\n\n.sm {\n    font-size : 8px;\n}\n.md {\n    font-size : 12px;\n}\n\n.lg {\n    font-size : 16px;\n}\n";
-n(css,{});
-
-var Button = function (_a) {
-    var label = _a.label, color = _a.color, size = _a.size;
-    return (jsxRuntimeExports.jsx("button", { className: "btn ".concat(color, " ").concat(size), children: label }));
-};
+function Button(props) {
+    var getClassName = function () {
+        var classes = [styles.btn];
+        if (props.outline)
+            classes.push(styles.outline);
+        if (props.color)
+            classes.push(styles[props.color]);
+        else
+            classes.push(styles['main']);
+        return classes.join(' ');
+    };
+    return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx("button", { className: getClassName(), onClick: function () { return props.onClick(); }, children: props.label }) }));
+}
 
 exports.Button = Button;

@@ -13,8 +13,17 @@ const config = {
     name: "@storybook/react-webpack5",
     options: {},
   },
-  docs: {
-    autodocs: "tag",
-  },
+    docs: {
+        autodocs: "tag",
+    },
+    webpackFinal: async (config, { configType }) => {
+        // SCSSファイルの処理を追加
+        config.module.rules.push({
+          test: /\.scss$/,
+          use: ['style-loader', 'css-loader', 'sass-loader'],
+        });    
+        return config;
+      },
+    
 };
 export default config;

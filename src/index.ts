@@ -1,2 +1,2 @@
 
-export { default as Button } from './stories/Button';
+export { default as Button } from './stories/button/Button';

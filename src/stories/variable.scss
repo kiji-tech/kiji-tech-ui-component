@@ -1,0 +1,51 @@
+// === screen size ===
+$tablet-screen-size: 800px;
+$pc-screen-size: 920px;
+
+// === font size ===
+$xl : 24px;
+$lg : 18px;
+$md : 14px;
+$sm : 12px;
+$xs : 10px;
+
+
+// === color ===
+
+// ==== gray color ====
+$gray-color1 : rgba(110, 110, 110, 1.0);
+$gray-color2 : rgba(150, 150, 150, 0.8);
+$gray-color3 : rgba(150, 150, 150, 0.6);
+$gray-color4 : rgba(150, 150, 150, 0.4);
+$gray-color5 : rgba(150, 150, 150, 0.2);
+$gray-color6 : rgba(200, 200, 200, 0.1);
+
+
+// ==== theme color ====
+$main-color : #0f2136;
+$main-hover-color : rgb(10, 20, 40);
+$main-opacity-color: rgba(15, 33, 54, 0.3);
+
+$base-color : #ffffff;
+$base-hover-color: rgb(240, 240, 240);
+
+$accent-color : #f8744a;
+$accent-color-filter: invert(51%) sepia(71%) saturate(945%) hue-rotate(331deg) brightness(102%) contrast(94%);
+
+$clear-color: rgba(0,0,0,0);
+
+$win-color : rgba(245, 110, 70, 1.0);
+$win-opacity-color : rgba(245, 110, 70, 0.4);
+$lose-color : rgba(98, 121, 223, 1.0);
+$lose-opacity-color : rgba(98, 121, 223, 0.4);
+$abort-color : $gray-color3;
+$abort-opacity-color : $gray-color4;
+
+$new-color : green;
+$battle-color: $accent-color;
+$close-color: $abort-color;
+
+
+//=== other ===
+$header-height: 50px;
+
