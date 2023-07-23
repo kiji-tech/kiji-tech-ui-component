@@ -23,6 +23,8 @@ const conf = {
     plugins: [
         scss({
             output: 'dist/index.css',
+            outputStyle: 'compressed', // 出力するCSSのスタイルを圧縮
+            failOnError: true, // エラーが発生した場合、ビルドを中止
         }),
         typescript(),
         // these are babel comfigurations
