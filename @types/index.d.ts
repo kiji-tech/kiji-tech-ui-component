@@ -2,6 +2,5 @@
 import { ButtonProps } from '../src/stories/Button';
 import React from 'react';
 
-
-declare const Button: React.FC<ButtonProps>;
-export default Button;
+export declare const Button: React.FC<ButtonProps>;
+export declare const ButtonProps: ButtonProps;
