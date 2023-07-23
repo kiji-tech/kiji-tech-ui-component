@@ -13,6 +13,7 @@
     "types": "@types/index.d.ts",
     "files": [
         "src",
+        "dist",
         "@types"
     ],
     "license": "ISC",
