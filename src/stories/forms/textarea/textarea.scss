@@ -1,0 +1,25 @@
+@import '../../variable.scss';
+
+.inputForms {
+    margin-top: 16px;
+    margin-bottom : 8px; 
+    width: 100%;
+    label {
+        background: $main-color;
+        color : $accent-color;
+        font-size: $md;
+        padding : 8px 16px;
+        border-radius: $radius-md;
+    }
+    textarea {
+        height : 100px;
+        margin-top : 10px;
+        padding : 4px 8px;
+        width : calc(100% - 20px);
+    }
+    p.viewLength {
+        float : right;
+        font-size: $xs;
+        margin : 0;
+    }
+}

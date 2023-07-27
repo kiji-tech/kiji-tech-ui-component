@@ -1,0 +1,8 @@
+@import '../variable.scss';
+div.breadcrumb {
+    margin-bottom : 8px;
+    font-size: $sm;
+    display: flex;
+    align-items: center;
+    max-width : $tablet-screen-size;
+}

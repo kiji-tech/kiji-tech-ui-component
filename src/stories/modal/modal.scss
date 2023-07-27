@@ -1,0 +1,39 @@
+@import './../../styles//variable.scss';
+
+
+.modal {
+    position: fixed;
+    top:0;
+    left:0;
+    margin : 0;
+    background: $gray-color1;
+    height : 100vh;
+    width : 100%;
+    display:flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index : 1000;
+
+    .modalContent {
+        position: relative;
+        top: calc(50% - 120px - 8px);
+        width : 80%;
+        height : 240px;
+        max-width : 800px;
+        background-color: $base-color;
+        border-radius : $radius-md;
+        padding : 16px;
+        .modalHeader {
+            font-size : $lg;
+        }
+        .modalMessage {
+            font-size : $md;
+        }
+        .modalButtons {
+            position : absolute;
+            bottom : 8px;
+            right : 8px;
+        }
+    }
+}

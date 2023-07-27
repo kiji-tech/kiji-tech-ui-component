@@ -9,9 +9,12 @@ $md : 14px;
 $sm : 12px;
 $xs : 10px;
 
+// radius-size
+$radius-sm : 4px;
+$radius-md : 8px;
+
 
 // === color ===
-
 // ==== gray color ====
 $gray-color1 : rgba(110, 110, 110, 1.0);
 $gray-color2 : rgba(150, 150, 150, 0.8);
@@ -30,6 +33,7 @@ $base-color : #ffffff;
 $base-hover-color: rgb(240, 240, 240);
 
 $accent-color : #f8744a;
+$accent-hover-color: #ec5d31;
 $accent-color-filter: invert(51%) sepia(71%) saturate(945%) hue-rotate(331deg) brightness(102%) contrast(94%);
 
 $clear-color: rgba(0,0,0,0);

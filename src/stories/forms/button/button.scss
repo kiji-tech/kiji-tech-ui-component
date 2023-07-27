@@ -1,0 +1,44 @@
+@import "../../variable.scss";
+
+.btn {
+    width : 100%;
+    height : 100%;
+    font-size: $md;
+    padding : 8px;
+    display : inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+}
+
+.radius {
+    border-radius: $radius-md;
+}
+
+.outline {
+    border: 1px solid $gray-color4;
+}
+
+.main {
+    background : $main-color;
+    color: $accent-color;
+    &:hover {
+        background: $main-hover-color;
+    }
+}
+
+.accent {
+    background : $accent-color;
+    color: $base-color;
+    &:hover {
+        background: $accent-hover-color;
+    }
+}
+
+.clear {
+    background : $clear-color;
+    color: $accent-color;
+    &:hover {
+        background: $base-hover-color;
+    }
+}

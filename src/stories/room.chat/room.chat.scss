@@ -1,0 +1,87 @@
+@import '../variable.scss';
+
+.chatBar {
+    margin : auto;
+    text-align: center;
+    align-items: baseline !important;
+    justify-content: space-around !important;
+}
+
+.messageForm {
+    width : calc(100% - 120px);
+}
+
+.messages {
+    display: flex;
+    flex-direction: column-reverse;
+    .message {
+        width : calc(100% - 32px);
+        align-items : flex-start !important;
+        border-bottom: 1px solid $main-color;
+        padding : 16px;
+        &:first-child {
+            border-bottom : 0px;
+        }
+        .left {
+            text-align : center;
+            margin:0 auto;
+            width: 72px;
+            .avatar {
+                position : inherit !important;
+                width : 56px !important;
+                height : 56px !important;
+                border-radius: 50%;
+            }
+        }
+        .right {
+            width : calc(100% - 72px);
+            .header {
+                margin-bottom : 8px;
+                .userName {
+                    font-size: $md;
+                }
+                .postingDate {
+                    font-size: $sm;
+                    color: gray
+                }
+            }
+            .chat {
+                font-size: $sm;
+            }
+        }
+        
+    }
+    // .message {
+    //     border-bottom: 1px solid $main-opacity-color;
+    //     font-size: $md;
+    //     margin: 8px 0;
+    //     display: flex;
+    //     height : 72px;
+    //     &:first-child {
+    //         border-bottom: 0px;
+    //     }
+    //     .account {
+    //         width : 80px;
+    //     }
+
+    //     .chatArea {
+    //         display: flex;
+    //         position: relative;
+    //         width  : calc(100% - 80px);
+    //         height : 100%;
+    //         .chat {
+    //             position : absolute;
+    //             top : 8px;
+    //         }
+    //         .sendDate {
+    //             position: absolute;
+    //             bottom : 8px;
+    //             right : 8px;
+    //             font-size: $sm;
+    //         }
+
+    //     }
+
+
+    // }
+}
