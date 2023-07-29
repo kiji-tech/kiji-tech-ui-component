@@ -1,4 +1,4 @@
-import styles from './pager.scss';
+import './pager.scss';
 import { useCallback, useEffect, useState } from 'react';
 import { faAnglesLeft, faChevronLeft, faAnglesRight, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,7 +27,7 @@ export default function Pager({ num, max, onClick }: PagerProps) {
 
     const getNumList = useCallback(() => {
         return (<>{pages.map((value, idx) => {
-            return (<div key={value} className={`${styles.pager} ${num == value ? styles.active : ''}`} onClick={() => onClick(idx + 1)}>
+            return (<div key={value} className={`pager ${num == value ? 'active' : ''}`} onClick={() => onClick(idx + 1)}>
                 {value}
             </div>)
         })}</>)
@@ -38,23 +38,23 @@ export default function Pager({ num, max, onClick }: PagerProps) {
         onClick(n);
     }, [max]);
 
-    return (<div className={styles.pagers}>
+    return (<div className={'pagers'}>
         {/* 最初 */}
-        <div className={styles.pager} onClick={() => { if (num != 1) clickEvent(1) }}>
+        <div className={'pager'} onClick={() => { if (num != 1) clickEvent(1) }}>
             <FontAwesomeIcon icon={faAnglesLeft} />
         </div>
         {/* 1つ前 */}
-        <div className={styles.pager} onClick={() => clickEvent(num - 1)}>
+        <div className={'pager'} onClick={() => clickEvent(num - 1)}>
             <FontAwesomeIcon icon={faChevronLeft} />
         </div>
         {/* 1 ~ max 最大数を横幅で変える? */}
         {getNumList()}
         {/* 1つ後 */}
-        <div className={styles.pager} onClick={() => clickEvent(num + 1)}>
+        <div className={'pager'} onClick={() => clickEvent(num + 1)}>
             <FontAwesomeIcon icon={faChevronRight} />
         </div>
         {/* 最後 */}
-        <div className={styles.pager} onClick={() => { if (num != max) clickEvent(max) }}>
+        <div className={'pager'} onClick={() => { if (num != max) clickEvent(max) }}>
             <FontAwesomeIcon icon={faAnglesRight} />
         </div>
 

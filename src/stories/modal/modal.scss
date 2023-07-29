@@ -1,5 +1,5 @@
-@import './../../styles//variable.scss';
-
+@import '../variable.scss';
+@import '../layout.scss';
 
 .modal {
     position: fixed;
@@ -34,6 +34,10 @@
             position : absolute;
             bottom : 8px;
             right : 8px;
+            display: flex;
+            div {
+                margin-right : 8px;
+            }
         }
     }
 }

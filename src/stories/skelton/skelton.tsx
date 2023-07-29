@@ -1,10 +1,10 @@
-import styles from './skelton.scss';
+import './skelton.scss';
 
 const Skelton = ({ classes }: { classes: string }) => {
-    let className = styles.skelton;
+    let className = "skelton";
 
     for (let cls of classes.split(' ')) {
-        className += ' ' + styles[cls];
+        className += ' ' + cls;
     }
 
     return (<div className={className}></div>);

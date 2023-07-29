@@ -1,4 +1,4 @@
-import styles from './modal.scss'
+import './modal.scss'
 import Button, { ButtonProps } from "../forms/button/button";
 
 type ModalProps = {
@@ -10,16 +10,20 @@ type ModalProps = {
 export default function Modal({ title, message, buttons }: ModalProps) {
 
 
-    return (<div className={`${styles.modal}`}>
-        <div className={`${styles.modalContent}`}>
-            <div className={`${styles.modalHeader}`}>{title}</div>
+    return (<div className={'modal'}>
+        <div className={'modalContent'}>
+            <div className={`modalHeader`}>{title}</div>
             <div className={`space`}></div>
-            <div className={`${styles.modalMessage}`}>{message}</div>
+            <div className={`modalMessage`}>{message}</div>
             <div className={`space`}></div>
             <div className={`space`}></div>
-            <div className={`btnGroup ${styles.modalButtons}`}>
+            <div className={`modalButtons`}>
                 {buttons.map((btn: ButtonProps, index) => {
-                    return <Button key={`modal-button${index}`} label={btn.label} onClick={() => btn.onClick()} />;
+                    return (
+                        <div className={`width-short`}>
+                            <Button key={`modal-button${index}`} label={btn.label} radius={btn.radius} color={btn.color} onClick={() => btn.onClick()} />
+                        </div>
+                    );
                 })}
             </div>
         </div>
