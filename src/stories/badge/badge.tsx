@@ -1,7 +1,7 @@
 import './badge.scss';
 import { ResultColor, Size } from "../types";
 
-type BadgeProps = {
+export type BadgeProps = {
     text: string,
     color?: ResultColor,
     size?: Size,

@@ -1,6 +1,6 @@
 import './input.scss';
 
-type InputProps = {
+export type InputProps = {
     type: 'email' | 'search' | 'password' | 'number' | 'text'
     id: string,
     label?: string,
