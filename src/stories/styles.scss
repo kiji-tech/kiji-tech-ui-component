@@ -1,0 +1,58 @@
+.width-fill{
+    width : 100%;
+}
+
+.width-33 {
+    width: 33%;
+}
+
+.width-short {
+    width: 120px;
+}
+
+.width-middle {
+    width: 160px;
+}
+.width-long {
+    width: 240px;
+}
+
+.space {
+    margin-bottom : 16px;
+}
+
+.color-main {
+    background : $main-color;
+    color: $accent-color;
+}
+
+.color-accent {
+    background : $accent-color;
+    color: $base-color;
+}
+
+.color-clear {
+    background : $clear-color;
+    color: $accent-color;
+}
+
+.color-win {
+    background: $win-color;
+    color: $base-color;
+}
+
+.color-lose {
+    background: $lose-color;
+    color: $base-color;
+}
+
+.color-abort {
+    background: $abort-color;
+    color: $base-color;
+}
+
+.color-new {
+    background: $new-color;
+    color: $base-color;
+}
+

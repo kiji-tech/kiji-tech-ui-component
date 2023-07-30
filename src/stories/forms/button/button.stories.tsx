@@ -12,7 +12,7 @@ const meta: Meta<typeof Button> = {
     component: Button,
     args: {
         label: 'Button.'
-        , color: "main"
+        , color: "color-main"
         , onClick: () => { }
     },
     argTypes: {
@@ -20,7 +20,7 @@ const meta: Meta<typeof Button> = {
             control: {
                 type: "inline-radio",
             },
-            options: ["main", "accent", "clear"],
+            options: ["color-main", "color-accent", "color-clear"],
         },
         label: {
             control: {

@@ -1,3 +1,4 @@
+import { Color } from '../../types';
 import './button.scss';
 
 export type ButtonProps = {
@@ -5,7 +6,7 @@ export type ButtonProps = {
     onClick: Function,
     outline?: boolean,
     radius?: boolean,
-    color?: 'main' | 'accent' | 'clear'
+    color?: Color,
 }
 
 export default function Button(props: ButtonProps) {

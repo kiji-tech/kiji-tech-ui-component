@@ -12,6 +12,7 @@ $xs : 10px;
 // radius-size
 $radius-sm : 4px;
 $radius-md : 8px;
+$radius-lg : 16px;
 
 
 // === color ===
@@ -42,7 +43,7 @@ $win-color : rgba(245, 110, 70, 1.0);
 $win-opacity-color : rgba(245, 110, 70, 0.4);
 $lose-color : rgba(98, 121, 223, 1.0);
 $lose-opacity-color : rgba(98, 121, 223, 0.4);
-$abort-color : $gray-color3;
+$abort-color : $gray-color2;
 $abort-opacity-color : $gray-color4;
 
 $new-color : green;
