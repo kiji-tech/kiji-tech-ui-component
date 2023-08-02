@@ -17,6 +17,11 @@ $ npm run storybook
     # version => major | minor | patch | premajor | preminor | prepatch | prerelease | from-git or version番号(x.x.x)
     $ npm version [version]
     ```
+- build
+    ```bash
+    $ npm run build
+    ```
+
 - npm更新
   ```bash
   $ npm publish
