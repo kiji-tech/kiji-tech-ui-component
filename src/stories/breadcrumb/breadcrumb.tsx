@@ -1,6 +1,6 @@
 import './breadcrumb.scss';
 
-type BreadcrumbProps = {
+export type BreadcrumbProps = {
     links?: {
         url: string,
         label: string

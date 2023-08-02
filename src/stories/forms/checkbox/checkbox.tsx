@@ -1,7 +1,7 @@
 
 import './checkbox.scss';
 
-type CheckboxProps = {
+export type CheckboxProps = {
     id: string,
     label?: string,
     value: boolean,

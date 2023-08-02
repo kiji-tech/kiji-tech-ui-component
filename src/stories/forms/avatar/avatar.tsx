@@ -5,7 +5,7 @@ import imageCompression, { Options } from 'browser-image-compression';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-type AvatarProps = {
+export type AvatarProps = {
     defaultImage?: any,
     imgUrl?: string,
     name?: string,

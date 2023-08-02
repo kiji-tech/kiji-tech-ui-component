@@ -1,14 +1,41 @@
-// my-component.d.ts
-import { ButtonProps } from '../src/stories/button/Button';
-import { BadgeProps } from '../src/stories/badge/badge';
-import { InputProps } from '../src/stories/forms/input';
 import React from 'react';
+import { AvatarProps } from '../src/stories/forms/avatar/avatar';
+import { BadgeProps } from '../src/stories/badge/badge';
+import { ButtonProps } from '../src/stories/button/button';
+import { CheckboxProps } from '../src/stories/checkbox/checkbox';
+import { InputProps } from '../src/stories/forms/input/input';
+import { ModalProps } from '../src/stories/modal/modal';
+import { PagerProps } from '../src/stories/pager/pager';
+import { IconButtonProps } from '../src/stories/forms/icon.button/icon.button';
+import { SelectorProps } from '../src/stories/forms/selector/selector';
+import { TextareaProps } from '../src/stories/forms/textarea/textarea';
+import { SkeltonCard, SkeltonList, SkeltonGame, SkeltonRoom } from '../src/index';
 
-export declare const Button: React.FC<ButtonProps>;
-export declare const ButtonProps: ButtonProps;
-
+// === Common ===
 export declare const Badge: React.FC<BadgeProps>;
 export declare const BadgeProps: BadgeProps;
+export declare const Modal: React.FC<ModalProps>
+export declare const ModalProps: ModalProps;
+export declare const Pager: React.FC<PagerProps>
+export declare const PagerProps: PagerProps;
 
+// === Form ===
+export declare const Avatar: React.FC<AvatarProps>
+export declare const AvatarProps: AvatarProps;
+export declare const Button: React.FC<ButtonProps>;
+export declare const ButtonProps: ButtonProps;
+export declare const Checkbox: React.FC<CheckboxProps>;
+export declare const CheckboxProps: CheckboxProps;
+export declare const IconButton: React.FC<IconButtonProps>
+export declare const IconButtonProps: IconButtonProps;
 export declare const Input: React.FC<InputProps>
 export declare const InputProps: InputProps;
+export declare const Selector: React.FC<SelectorProps>
+export declare const SelectorProps: SelectorProps;
+export declare const Textarea: React.FC<TextareaProps>
+export declare const TextareaProps: TextareaProps;
+
+export declare const SkeltonCard: SkeltonCard;
+export declare const SkeltonList: SkeltonList;
+export declare const SkeltonGame: SkeltonGame;
+export declare const SkeltonRoom: SkeltonRoom;

@@ -1,6 +1,6 @@
 import './textarea.scss';
 
-type TextareaProps = {
+export type TextareaProps = {
     id: string,
     label: string,
     value: string,

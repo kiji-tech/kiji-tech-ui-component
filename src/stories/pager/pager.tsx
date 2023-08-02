@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const pagerMax = 5;
 
-type PagerProps = {
+export type PagerProps = {
     num: number,
     max: number,
     onClick: Function,

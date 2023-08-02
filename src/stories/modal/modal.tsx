@@ -1,7 +1,7 @@
 import './modal.scss'
 import Button, { ButtonProps } from "../forms/button/button";
 
-type ModalProps = {
+export type ModalProps = {
     title: string;
     message: string;
     buttons: ButtonProps[]

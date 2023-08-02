@@ -6,7 +6,7 @@ export type SelectorOption = {
     label: string;
 }
 
-type SelectorProps = {
+export type SelectorProps = {
     id: string,
     label?: string,
     required?: boolean,

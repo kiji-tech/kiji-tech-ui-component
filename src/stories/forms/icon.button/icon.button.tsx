@@ -1,5 +1,5 @@
-import './icon.scss';
-type IconButtonProps = {
+import './icon.button.scss';
+export type IconButtonProps = {
     icon: any,
     alt: string,
     onClick: Function,

@@ -1,3 +1,8 @@
+## コンポーネントの追加
+- ``scr/stories``配下に､React形式でコンポーネントを作成
+- ``src/index.ts``にexportを作成
+- ``@types/index.d.ts``下に､型定義を作成
+
 ## プロジェクトの起動
 ```bash
 # localhost:6006で立ち上がる
