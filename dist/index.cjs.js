@@ -6187,7 +6187,7 @@ function Input(_a) {
         onChange(value);
     };
     return (jsxRuntimeExports.jsxs("div", { className: 'inputForm', children: [label
-                ? jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] })
+                ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] }))
                 : null, jsxRuntimeExports.jsx("input", { id: id, type: type, placeholder: placeholder, value: value, onChange: function (e) { change(e); }, disabled: disabled }), typeof value == 'string' && max ? jsxRuntimeExports.jsx("p", { className: 'viewLength', children: "".concat(value.length, " / ").concat(max.toString()) }) : jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}), jsxRuntimeExports.jsx("p", { className: 'message', children: message })] }));
 }
 
@@ -6201,13 +6201,15 @@ function Selector(_a) {
 }
 
 function Textarea(_a) {
-    var id = _a.id, label = _a.label, value = _a.value, length = _a.length, _b = _a.disabled, disabled = _b === void 0 ? false : _b, onChange = _a.onChange;
+    var id = _a.id, label = _a.label, value = _a.value, length = _a.length, _b = _a.disabled, disabled = _b === void 0 ? false : _b, _c = _a.required, required = _c === void 0 ? false : _c, onChange = _a.onChange;
     var change = function (e) {
         if (typeof e.target.value == 'string')
             value = e.target.value.slice(0, length);
         onChange(value);
     };
-    return (jsxRuntimeExports.jsxs("div", { className: "inputForms", children: [jsxRuntimeExports.jsx("label", { htmlFor: id, children: label }), jsxRuntimeExports.jsx("textarea", { id: id, value: value, onChange: function (e) { return change(e); }, disabled: disabled }), length && length > 0
+    return (jsxRuntimeExports.jsxs("div", { className: "inputForms", children: [label ?
+                (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] }))
+                : null, jsxRuntimeExports.jsx("textarea", { id: id, value: value, onChange: function (e) { return change(e); }, disabled: disabled }), length && length > 0
                 ? jsxRuntimeExports.jsxs("p", { className: "viewLength", children: [value ? value.length : 0, " / ", length] })
                 : jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {})] }));
 }
