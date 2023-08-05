@@ -17,9 +17,13 @@ export type SelectorProps = {
 
 export default function Selector({ id, label = '', required = false, options, selected, onChange }: SelectorProps) {
     return (<div className={"selector"}>
-        {label
-            ? <label htmlFor={id}>{label}{required ? " *" : ""}</label>
-            : null
+        {
+            label
+                ? (<>
+                    <label htmlFor={id}>{label}{required ? " *" : ""}</label>
+                    <div className="space"></div>
+                </>)
+                : null
         }
         <select value={selected || ''} className={"options"} onChange={(e) => onChange(e)}>
             {options.map(option => {

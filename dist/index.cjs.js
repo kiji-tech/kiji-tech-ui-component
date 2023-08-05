@@ -6194,7 +6194,7 @@ function Input(_a) {
 function Selector(_a) {
     var id = _a.id, _b = _a.label, label = _b === void 0 ? '' : _b, _c = _a.required, required = _c === void 0 ? false : _c, options = _a.options, selected = _a.selected, onChange = _a.onChange;
     return (jsxRuntimeExports.jsxs("div", { className: "selector", children: [label
-                ? jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] })
+                ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] }))
                 : null, jsxRuntimeExports.jsx("select", { value: selected || '', className: "options", onChange: function (e) { return onChange(e); }, children: options.map(function (option) {
                     return jsxRuntimeExports.jsx("option", { value: option.value || '', children: option.label }, option.label);
                 }) })] }));
