@@ -19,6 +19,7 @@ $ npm run start
     $ npm run build
     ```
 
+- gitの更新
 - npmバージョンアップ
     ```bash
     # version => major | minor | patch | premajor | preminor | prepatch | prerelease | from-git or version番号(x.x.x)
