@@ -41,7 +41,10 @@ export default function Input({
     return (
         <div className={'inputForm'}>
             {label
-                ? <label htmlFor={id}>{label}{required ? " *" : ""}</label>
+                ? (<>
+                    <label htmlFor={id}>{label}{required ? " *" : ""}</label>
+                    <div className="space"></div>
+                </>)
                 : null
             }
             <input
