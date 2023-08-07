@@ -7,21 +7,22 @@ export type ButtonProps = {
     outline?: boolean,
     radius?: boolean,
     color?: Color,
+    disabled?: boolean,
 }
 
-export default function Button(props: ButtonProps) {
+export default function Button({ label, onClick, outline = false, radius = false, color, disabled = false }: ButtonProps) {
     const getClassName = (): string => {
         let classes: string[] = ["btn"];
-        if (props.outline) classes.push("outline");
-        if (props.radius) classes.push("btn-radius");
-        if (props.color) classes.push(props.color);
+        if (outline) classes.push("outline");
+        if (radius) classes.push("btn-radius");
+        if (color) classes.push(color);
         else classes.push('main');
 
         return classes.join(' ');
     }
     return (
         <>
-            <button className={getClassName()} onClick={() => props.onClick()}>{props.label}</button>
+            <button className={getClassName()} disabled={disabled} onClick={() => onClick()}>{label}</button>
         </>
     );
 }

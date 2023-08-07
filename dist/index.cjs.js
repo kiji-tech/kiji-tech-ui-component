@@ -1374,20 +1374,21 @@ function Breadcrumb(_a) {
         }) }));
 }
 
-function Button(props) {
+function Button(_a) {
+    var label = _a.label, onClick = _a.onClick, _b = _a.outline, outline = _b === void 0 ? false : _b, _c = _a.radius, radius = _c === void 0 ? false : _c, color = _a.color, _d = _a.disabled, disabled = _d === void 0 ? false : _d;
     var getClassName = function () {
         var classes = ["btn"];
-        if (props.outline)
+        if (outline)
             classes.push("outline");
-        if (props.radius)
+        if (radius)
             classes.push("btn-radius");
-        if (props.color)
-            classes.push(props.color);
+        if (color)
+            classes.push(color);
         else
             classes.push('main');
         return classes.join(' ');
     };
-    return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx("button", { className: getClassName(), onClick: function () { return props.onClick(); }, children: props.label }) }));
+    return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx("button", { className: getClassName(), disabled: disabled, onClick: function () { return onClick(); }, children: label }) }));
 }
 
 function Modal(_a) {
