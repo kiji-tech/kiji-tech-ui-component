@@ -13,7 +13,7 @@ export type CheckboxProps = {
 
 export default function Checkbox({ id, label, value, required = false, disabled = false, onChange }: CheckboxProps) {
     return (<>
-        {label ? <label className="label">{label}</label> : null}
         <input type="checkbox" id={id} checked={value} disabled={disabled} onChange={(e) => onChange(e)} />
+        {label ? <label className="label" onClick={() => onChange(!value)}>{label}</label> : null}
     </>)
 }
