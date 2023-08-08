@@ -36,16 +36,22 @@ const meta: Meta<typeof Button> = {
             control: {
                 type: "boolean"
             }
+        },
+        disabled: {
+            control: {
+                type: "boolean"
+            }
         }
+
     },
     render: (args) => {
         return (<div style={btnStyle}>
-            <Button label={args.label} onClick={() => { }} color={args.color} outline={args.outline} radius={args.radius} />
+            <Button label={args.label} onClick={() => { }} color={args.color} outline={args.outline} radius={args.radius} disabled={args.disabled} />
         </div>);
     }
 };
 
 export const story: StoryObj = {
-    args: { label: "Button", onClick: () => { }, radius: true, outline: false }
+    args: { label: "Button", onClick: () => { }, radius: true, outline: false, disabled: false, }
 }
 export default meta;
