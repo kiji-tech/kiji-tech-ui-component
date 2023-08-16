@@ -6,7 +6,7 @@ const meta: Meta = {
     args: {
         title: ""
         , message: ""
-        , buttons: [{ color: 'clear', label: 'Clear', onClick: () => { }, radius: true }, { color: 'main', label: 'Main', onClick: () => { }, radius: true }]
+        , buttons: [{ color: 'clear', label: 'キャンセル', onClick: () => { }, radius: true }, { color: 'main', label: 'OK', onClick: () => { }, radius: true }]
     },
     argTypes: {
         title: { control: { type: "text" } },
