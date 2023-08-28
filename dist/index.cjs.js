@@ -6161,7 +6161,7 @@ function Avatar(_a) {
 
 function Checkbox(_a) {
     var id = _a.id, label = _a.label, value = _a.value; _a.required; var _c = _a.disabled, disabled = _c === void 0 ? false : _c, onChange = _a.onChange;
-    return (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx("input", { type: "checkbox", id: id, checked: value, disabled: disabled, onChange: function (e) { return onChange(e); } }), label ? jsxRuntimeExports.jsx("label", { className: "label", onClick: function () { return onChange(!value); }, children: label }) : null] }));
+    return (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx("input", { type: "checkbox", id: id, checked: value, disabled: disabled, onChange: function (e) { return onChange(e); } }), jsxRuntimeExports.jsx("label", { className: "label", onClick: function () { return onChange(!value); }, children: label })] }));
 }
 
 function IconButton(props) {
