@@ -1,0 +1,47 @@
+@import "../../variable.scss";
+@import "../../styles.scss";
+
+.badge {
+  border-radius: 50px;
+  font-weight: bold;
+
+  &.xs {
+    padding: 4px 8px;
+    font-size: $xs;
+    max-width: 40px;
+    height: 16px;
+    line-height: 16px;
+  }
+
+  &.sm {
+    padding: 6px 10px;
+    font-size: $sm;
+    max-width: 48px;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  &.md {
+    padding: 8px 12px;
+    font-size: $md;
+    max-width: 56px;
+    height: 24px;
+    line-height: 24px;
+  }
+
+  &.lg {
+    font-size: $lg;
+    max-width: 64px;
+    height: 28px;
+    padding: 10px 16px;
+    line-height: 28px;
+  }
+
+  p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: auto;
+    text-align: center;
+  }
+}

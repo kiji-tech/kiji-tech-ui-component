@@ -1,0 +1,35 @@
+@import "../../variable.scss";
+
+.pagers {
+  height: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+
+  .pager {
+    border: 1px solid $main-color;
+    cursor: pointer;
+    border-radius: $radius-md;
+    height: 32px;
+    width: 32px;
+    box-shadow: 4px 4px 8px $main-opacity-color;
+
+    line-height: 32px;
+    margin-right: 8px;
+    text-align: center;
+    &:last-child {
+      margin-right: 0px;
+    }
+    &.active {
+      background: $main-color;
+      color: $accent-color;
+      font-weight: bold;
+    }
+    svg {
+      width: 50% !important;
+      height: 50% !important;
+      padding-top: 8px;
+    }
+  }
+}

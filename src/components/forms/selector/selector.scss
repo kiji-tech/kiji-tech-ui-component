@@ -1,0 +1,18 @@
+@import '../../../variable.scss';
+@import '../../../styles.scss';
+
+.selector {
+    width : 100%;
+    label {
+        background : $main-color;
+        color: $accent-color;
+        font-size: $md;
+        padding : 8px 16px;
+        border-radius: $radius-md;
+        margin-bottom : 8px !important;
+    }
+    .options {
+        width : calc(100%);
+        padding : 2px 0 2px 4px;
+    }
+}

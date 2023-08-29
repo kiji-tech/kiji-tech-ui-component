@@ -1,0 +1,109 @@
+@import "../../../variable.scss";
+
+.avatar {
+  text-align: center;
+  margin: auto;
+
+  a,
+  a:visited,
+  a:link,
+  a:hover,
+  a:active,
+  & {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    &.xs {
+      width: 50px;
+      font-size: $sm;
+      .circle {
+        width: 35px !important;
+        height: 35px !important;
+      }
+    }
+    &.sm {
+      width: 120px;
+      font-size: $sm;
+      .circle {
+        width: 40px !important;
+        height: 40px !important;
+      }
+    }
+    &.md {
+      width: 160px;
+      font-size: $md;
+      .circle {
+        width: 72px !important;
+        height: 72px !important;
+      }
+    }
+    &.lg {
+      width: 180px;
+      font-size: $lg;
+      .circle {
+        width: 80px !important;
+        height: 80px !important;
+      }
+    }
+    // === 長方形 ===
+    .rectangle {
+      overflow: hidden;
+      position: relative !important;
+      width: 80px;
+      height: 120px;
+      padding: 5%;
+      margin: auto;
+      border-radius: $radius-md;
+      background: $main-color;
+      color: $accent-color;
+
+      .avatarImage {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: fill;
+      }
+      & + p {
+        inline-size: 100%;
+        margin: 5px 0;
+        .sponsor,
+        .avatarId {
+          font-size: $sm;
+        }
+        .avatarId {
+          color: $gray-color1;
+        }
+        .avatarName {
+        }
+      }
+    }
+    // === 円 ===
+    .circle {
+      overflow: hidden;
+      position: relative !important;
+      padding: 5%;
+      margin: auto;
+      border-radius: 50%;
+      background: $main-color;
+      color: $accent-color;
+
+      .avatarImage {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+      }
+      & + p {
+        inline-size: 100%;
+        margin: 5px 0;
+        .sponsor,
+        .avatarId {
+          font-size: $sm;
+        }
+        .avatarId {
+          color: $gray-color1;
+        }
+        .avatarName {
+        }
+      }
+    }
+  }
+}
