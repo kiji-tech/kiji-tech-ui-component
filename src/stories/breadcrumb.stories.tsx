@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Breadcrumb } from "../";
+import { Breadcrumb } from "..";
 
 const meta: Meta<typeof Breadcrumb> = {
   component: Breadcrumb,

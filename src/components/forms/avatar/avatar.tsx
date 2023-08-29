@@ -1,31 +1,29 @@
 import "./avatar.scss";
 import { Size } from "../../../types";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useCallback } from "react";
 import imageCompression, { Options } from "browser-image-compression";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 export type AvatarProps = {
-  defaultImage?: any;
-  imgUrl?: string;
-  name?: string;
   id?: string;
-  sponsor?: string;
+  imgUrl?: string;
+  defaultImage?: any;
   link?: string;
   shape?: "square" | "circle" | "rectangle";
   size?: Size;
+  onClick?: Function;
   onChange?: Function;
 };
 
 export default function Avatar({
+  id = "",
   imgUrl = "",
   defaultImage = faUser,
-  name = "",
-  id = "",
-  sponsor = "",
   shape = "circle",
   link = "",
   size = "md",
+  onClick,
   onChange,
 }: AvatarProps) {
   const editImage = () => {
@@ -52,73 +50,37 @@ export default function Avatar({
       reader.readAsDataURL(file);
     }
   };
+
+  const renderAvatar = useCallback(() => {
+    return (
+      <>
+        <input
+          id="imgfile"
+          accept="image/*"
+          type="file"
+          style={{ display: "none" }}
+          onChange={(event) => changeImage(event)}
+        />
+        <div
+          className={shape}
+          onClick={() => {
+            editImage();
+          }}
+        >
+          {imgUrl ? (
+            <img className={"avatarImage"} alt={id || ""} src={imgUrl} />
+          ) : (
+            <FontAwesomeIcon icon={defaultImage} className={"avatarImage"} />
+          )}
+        </div>
+      </>
+    );
+  }, [imgUrl, defaultImage, shape]);
+
   return (
     <div className={`avatar ${size}`}>
       {/* リンクあり */}
-      {link ? (
-        <a href={link}>
-          <input
-            id="imgfile"
-            accept="image/*"
-            type="file"
-            style={{ display: "none" }}
-            onChange={(event) => changeImage(event)}
-          />
-          <div
-            className={shape}
-            onClick={() => {
-              editImage();
-            }}
-          >
-            {imgUrl ? (
-              <img className={"avatarImage"} alt={name || ""} src={imgUrl} />
-            ) : (
-              <FontAwesomeIcon icon={defaultImage} className={"avatarImage"} />
-            )}
-          </div>
-          <p>
-            {sponsor ? (
-              <span className={"sponsor"}>
-                【{sponsor || ""}】<br />
-              </span>
-            ) : null}
-            <span className={"avatarName"}>{name || ""}</span>
-            {id ? <span className={"avatarId"}>@{id || ""}</span> : null}
-          </p>
-        </a>
-      ) : (
-        <>
-          {/* リンクなし */}
-          <input
-            id="imgfile"
-            accept="image/*"
-            type="file"
-            style={{ display: "none" }}
-            onChange={(event) => changeImage(event)}
-          />
-          <div
-            className={shape}
-            onClick={() => {
-              editImage();
-            }}
-          >
-            {imgUrl ? (
-              <img className={"avatarImage"} alt={name || ""} src={imgUrl} />
-            ) : (
-              <FontAwesomeIcon icon={defaultImage} className={"avatarImage"} />
-            )}
-          </div>
-          <p>
-            {sponsor ? (
-              <span className={"sponsor"}>
-                【{sponsor || ""}】<br />
-              </span>
-            ) : null}
-            <span className={"avatarName"}>{name || ""}</span>
-            {id ? <span className={"avatarId"}>@{id || ""}</span> : null}
-          </p>
-        </>
-      )}
+      {link ? <a href={link}>{renderAvatar()}</a> : renderAvatar()}
     </div>
   );
 }

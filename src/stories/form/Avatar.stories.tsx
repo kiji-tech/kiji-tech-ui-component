@@ -1,20 +1,17 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Avatar } from "../";
+import { Avatar } from "../..";
 
 const meta: Meta<typeof Avatar> = {
-  title: "Avatar",
   component: Avatar,
+  tags: ["autodocs"],
   args: {
     id: "id",
-    name: "name",
-    sponsor: "sponsor",
     shape: "circle",
+    size: "md",
   },
   argTypes: {
-    imgUrl: { control: { type: "text" } },
-    name: { control: { type: "text" } },
     id: { control: { type: "text" } },
-    sponsor: { control: { type: "text" } },
+    imgUrl: { control: { type: "text" } },
     link: { control: { type: "text" } },
     shape: {
       control: { type: "inline-radio" },
@@ -29,9 +26,7 @@ const meta: Meta<typeof Avatar> = {
     return (
       <Avatar
         id={args.id}
-        name={args.name}
         imgUrl={args.imgUrl}
-        sponsor={args.sponsor}
         link={args.link}
         shape={args.shape}
         size={args.size}
@@ -40,8 +35,13 @@ const meta: Meta<typeof Avatar> = {
   },
 };
 
-export const story: StoryObj = {
-  args: {},
+export default meta;
+type Story = StoryObj<typeof Avatar>;
+
+export const Circle: Story = {
+  args: { shape: "circle" },
 };
 
-export default meta;
+export const Rectangle: Story = {
+  args: { shape: "rectangle" },
+};

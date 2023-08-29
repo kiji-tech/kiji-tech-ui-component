@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { SkeltonCard } from "../";
+import { SkeltonCard } from "..";
 
 const meta: Meta = {
     title: "SkeltonCard",
