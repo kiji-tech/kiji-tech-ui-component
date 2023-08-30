@@ -1,14 +1,14 @@
 import React from 'react';
-import { AvatarProps } from '../src/stories/forms/avatar/avatar';
-import { BadgeProps } from '../src/stories/badge/badge';
-import { ButtonProps } from '../src/stories/button/button';
-import { CheckboxProps } from '../src/stories/checkbox/checkbox';
-import { InputProps } from '../src/stories/forms/input/input';
-import { ModalProps } from '../src/stories/modal/modal';
-import { PagerProps } from '../src/stories/pager/pager';
-import { IconButtonProps } from '../src/stories/forms/icon.button/icon.button';
-import { SelectorProps } from '../src/stories/forms/selector/selector';
-import { TextareaProps } from '../src/stories/forms/textarea/textarea';
+import { AvatarProps } from '../src/components/forms/avatar/avatar';
+import { BadgeProps } from '../src/components/badge/badge';
+import { ButtonProps } from '../src/components/button/button';
+import { CheckboxProps } from '../src/components/checkbox/checkbox';
+import { InputProps } from '../src/components/forms/input/input';
+import { ModalProps } from '../src/components/modal/modal';
+import { PagerProps } from '../src/components/pager/pager';
+import { IconButtonProps } from '../src/components/forms/icon.button/icon.button';
+import { SelectorProps } from '../src/components/forms/selector/selector';
+import { TextareaProps } from '../src/components/forms/textarea/textarea';
 import { SkeltonCard, SkeltonList, SkeltonGame, SkeltonRoom } from '../src/index';
 
 // === Common ===

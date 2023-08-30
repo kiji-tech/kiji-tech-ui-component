@@ -2,11 +2,17 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Pager } from "..";
 
 const meta: Meta = {
-  title: "Pager",
+  tags: ["autodocs"],
+  component: Pager,
   args: { num: 1, max: 10, onClick: () => {} },
   argTypes: {
-    num: { control: { type: "number" } },
+    num: {
+      control: { type: "number" },
+      description:
+        "今選択しているページ｡<br />｢1 <= num <= max｣ の範囲で指定する｡",
+    },
     max: { control: { type: "number" } },
+    onClick: {},
   },
   render: (args) => {
     return (
@@ -17,7 +23,9 @@ const meta: Meta = {
   },
 };
 
-export const story: StoryObj = {
+export default meta;
+type Story = StoryObj<typeof Pager>;
+
+export const Basic: Story = {
   args: {},
 };
-export default meta;

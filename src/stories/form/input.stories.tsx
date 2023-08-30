@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Input } from "../..";
 
 const meta: Meta = {
-  title: "Input",
+  component: Input,
+  tags: ["autodocs"],
   args: {
     type: "text",
     id: "id",
@@ -22,6 +23,7 @@ const meta: Meta = {
     type: {
       control: { type: "inline-radio" },
       options: ["email", "search", "password", "number", "text"],
+      description: "form type.",
     },
     id: { control: { type: "text" } },
     label: { control: { type: "text" } },
@@ -58,7 +60,9 @@ const meta: Meta = {
   },
 };
 
-export const story: StoryObj = {
+export default meta;
+type Story = StoryObj<typeof Input>;
+
+export const Basic: Story = {
   args: {},
 };
-export default meta;

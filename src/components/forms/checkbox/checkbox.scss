@@ -45,4 +45,8 @@ input[type="checkbox"] {
       opacity: 1;
     }
   }
+
+  &:disabled + label::before {
+    background: $gray-color5;
+  }
 }

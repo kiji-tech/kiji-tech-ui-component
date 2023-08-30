@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Textarea } from "../..";
 
 const meta: Meta = {
-  title: "Textarea",
+  tags: ["autodocs"],
+  component: Textarea,
   args: {
     id: "",
     label: "ラベル",
@@ -33,7 +34,9 @@ const meta: Meta = {
   },
 };
 
-export const story: StoryObj = {
+export default meta;
+type Story = StoryObj<typeof Textarea>;
+
+export const Basic: Story = {
   args: {},
 };
-export default meta;

@@ -2,19 +2,19 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Checkbox } from "../..";
 
 const meta: Meta<typeof Checkbox> = {
-  title: "Checkbox",
   component: Checkbox,
+  tags: ["autodocs"],
   args: {
     id: "checkbox",
     label: "チェックボックス",
-    value: false,
+    checked: false,
     required: false,
     disabled: false,
   },
   argTypes: {
     id: { control: { type: "text" } },
     label: { control: { type: "text" } },
-    value: { control: { type: "boolean" } },
+    checked: { control: { type: "boolean" } },
     required: { control: { type: "boolean" } },
     disabled: { control: { type: "boolean" } },
   },
@@ -23,7 +23,7 @@ const meta: Meta<typeof Checkbox> = {
       <Checkbox
         id={args.id}
         label={args.label}
-        value={args.value}
+        checked={args.checked}
         required={args.required}
         disabled={args.disabled}
         onChange={() => {}}
@@ -32,13 +32,23 @@ const meta: Meta<typeof Checkbox> = {
   },
 };
 
-export const story: StoryObj = {
+export default meta;
+type Story = StoryObj<typeof Checkbox>;
+export const Basic: Story = {
   args: {
     id: "checkbox01",
     label: "ラベル",
-    value: false,
+    checked: false,
     required: false,
     disabled: false,
   },
 };
-export default meta;
+export const NonLabel: Story = {
+  args: {
+    id: "checkbox02",
+    label: "",
+    checked: false,
+    required: false,
+    disabled: false,
+  },
+};

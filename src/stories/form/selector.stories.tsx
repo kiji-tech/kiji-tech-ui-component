@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Selector } from "../..";
 
 const meta: Meta<typeof Selector> = {
-  title: "Selector",
+  tags: ["autodocs"],
   component: Selector,
   args: {
     id: "",
@@ -33,8 +33,10 @@ const meta: Meta<typeof Selector> = {
     );
   },
 };
+export default meta;
+type Story = StoryObj<typeof Selector>;
 
-export const story: StoryObj = {
+export const story: Story = {
   args: {
     id: "",
     selected: "",
@@ -45,4 +47,3 @@ export const story: StoryObj = {
     ],
   },
 };
-export default meta;

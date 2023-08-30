@@ -1361,7 +1361,7 @@ if (process.env.NODE_ENV === 'production') {
 var jsxRuntimeExports = jsxRuntime.exports;
 
 function Badge(_a) {
-    var text = _a.text, _b = _a.color, color = _b === void 0 ? 'color-main' : _b, _c = _a.size, size = _c === void 0 ? 'md' : _c;
+    var text = _a.text, _b = _a.color, color = _b === void 0 ? "color-main" : _b, _c = _a.size, size = _c === void 0 ? "md" : _c;
     return (jsxRuntimeExports.jsx("div", { className: "badge ".concat(color, " ").concat(size), children: jsxRuntimeExports.jsx("p", { children: text }) }));
 }
 
@@ -1385,15 +1385,15 @@ function Button(_a) {
         if (color)
             classes.push(color);
         else
-            classes.push('main');
-        return classes.join(' ');
+            classes.push("main");
+        return classes.join(" ");
     };
     return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx("button", { className: getClassName(), disabled: disabled, onClick: function () { return onClick(); }, children: label }) }));
 }
 
 function Modal(_a) {
     var title = _a.title, message = _a.message, buttons = _a.buttons;
-    return (jsxRuntimeExports.jsx("div", { className: 'modal', children: jsxRuntimeExports.jsxs("div", { className: 'modalContent', children: [jsxRuntimeExports.jsx("div", { className: "modalHeader", children: title }), jsxRuntimeExports.jsx("div", { className: "space" }), jsxRuntimeExports.jsx("div", { className: "modalMessage", children: message }), jsxRuntimeExports.jsx("div", { className: "space" }), jsxRuntimeExports.jsx("div", { className: "space" }), jsxRuntimeExports.jsx("div", { className: "modalButtons", children: buttons.map(function (btn, index) {
+    return (jsxRuntimeExports.jsx("div", { className: "modal", children: jsxRuntimeExports.jsxs("div", { className: "modalContent", children: [jsxRuntimeExports.jsx("div", { className: "modalHeader", children: title }), jsxRuntimeExports.jsx("div", { className: "space" }), jsxRuntimeExports.jsx("div", { className: "modalMessage", children: message }), jsxRuntimeExports.jsx("div", { className: "space" }), jsxRuntimeExports.jsx("div", { className: "space" }), jsxRuntimeExports.jsx("div", { className: "modalButtons", children: buttons.map(function (btn, index) {
                         return (jsxRuntimeExports.jsx("div", { className: "width-short", children: jsxRuntimeExports.jsx(Button, { label: btn.label, radius: btn.radius, color: btn.color, onClick: function () { return btn.onClick(); } }, "modal-button".concat(index)) }));
                     }) })] }) }));
 }
@@ -6024,7 +6024,7 @@ function Pager(_a) {
         var array = [];
         for (var i = 0; i < max; i++) {
             var page = i + 1;
-            if ((num - 2 <= page && page <= num + 2) && array.length < pagerMax) {
+            if (num - 2 <= page && page <= num + 2 && array.length < pagerMax) {
                 array.push(page);
             }
         }
@@ -6032,7 +6032,7 @@ function Pager(_a) {
     }, [num, max]);
     var getNumList = require$$0.useCallback(function () {
         return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: pages.map(function (value, idx) {
-                return (jsxRuntimeExports.jsx("div", { className: "pager ".concat(num == value ? 'active' : ''), onClick: function () { return onClick(idx + 1); }, children: value }, value));
+                return (jsxRuntimeExports.jsx("div", { className: "pager ".concat(num == value ? "active" : ""), onClick: function () { return onClick(idx + 1); }, children: value }, value));
             }) }));
     }, [num, max, pages]);
     var clickEvent = require$$0.useCallback(function (n) {
@@ -6040,9 +6040,13 @@ function Pager(_a) {
             return;
         onClick(n);
     }, [max]);
-    return (jsxRuntimeExports.jsxs("div", { className: 'pagers', children: [jsxRuntimeExports.jsx("div", { className: 'pager', onClick: function () { if (num != 1)
-                    clickEvent(1); }, children: jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: faAnglesLeft }) }), jsxRuntimeExports.jsx("div", { className: 'pager', onClick: function () { return clickEvent(num - 1); }, children: jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: faChevronLeft }) }), getNumList(), jsxRuntimeExports.jsx("div", { className: 'pager', onClick: function () { return clickEvent(num + 1); }, children: jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: faChevronRight }) }), jsxRuntimeExports.jsx("div", { className: 'pager', onClick: function () { if (num != max)
-                    clickEvent(max); }, children: jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: faAnglesRight }) })] }));
+    return (jsxRuntimeExports.jsxs("div", { className: "pagers", children: [jsxRuntimeExports.jsx("div", { className: "pager", onClick: function () {
+                    if (num != 1)
+                        clickEvent(1);
+                }, children: jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: faAnglesLeft }) }), jsxRuntimeExports.jsx("div", { className: "pager", onClick: function () { return clickEvent(num - 1); }, children: jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: faChevronLeft }) }), getNumList(), jsxRuntimeExports.jsx("div", { className: "pager", onClick: function () { return clickEvent(num + 1); }, children: jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: faChevronRight }) }), jsxRuntimeExports.jsx("div", { className: "pager", onClick: function () {
+                    if (num != max)
+                        clickEvent(max);
+                }, children: jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: faAnglesRight }) })] }));
 }
 
 /******************************************************************************
@@ -6116,11 +6120,11 @@ function _mergeNamespaces$1(e,t){return t.forEach((function(t){t&&"string"!=type
 
 function Avatar(_a) {
     var _this = this;
-    var _b = _a.imgUrl, imgUrl = _b === void 0 ? '' : _b, _c = _a.defaultImage, defaultImage = _c === void 0 ? faUser : _c, _d = _a.name, name = _d === void 0 ? '' : _d, _e = _a.id, id = _e === void 0 ? '' : _e, _f = _a.sponsor, sponsor = _f === void 0 ? '' : _f, _g = _a.shape, shape = _g === void 0 ? 'circle' : _g, _h = _a.link, link = _h === void 0 ? '' : _h, _j = _a.size, size = _j === void 0 ? 'md' : _j, onChange = _a.onChange;
+    var _b = _a.id, id = _b === void 0 ? "" : _b, _c = _a.imgUrl, imgUrl = _c === void 0 ? "" : _c, _d = _a.defaultImage, defaultImage = _d === void 0 ? faUser : _d, _e = _a.shape, shape = _e === void 0 ? "circle" : _e, _f = _a.link, link = _f === void 0 ? "" : _f, _g = _a.size, size = _g === void 0 ? "md" : _g; _a.onClick; var onChange = _a.onChange;
     var editImage = function () {
         var _a;
         if (onChange)
-            (_a = document.getElementById('imgfile')) === null || _a === void 0 ? void 0 : _a.click();
+            (_a = document.getElementById("imgfile")) === null || _a === void 0 ? void 0 : _a.click();
     };
     var changeImage = function (event) { return __awaiter(_this, void 0, void 0, function () {
         var options, file, reader;
@@ -6130,7 +6134,7 @@ function Avatar(_a) {
                     if (!onChange) return [3 /*break*/, 2];
                     // ファイルが選択されていない場合は､から文字を設定する
                     if (!event.target.files.length) {
-                        onChange('');
+                        onChange("");
                         return [2 /*return*/];
                     }
                     options = {
@@ -6150,18 +6154,17 @@ function Avatar(_a) {
             }
         });
     }); };
-    return (jsxRuntimeExports.jsx("div", { className: "avatar ".concat(size), children: link ?
-            jsxRuntimeExports.jsxs("a", { href: link, children: [jsxRuntimeExports.jsx("input", { id: 'imgfile', accept: "image/*", type: 'file', style: { display: 'none' }, onChange: function (event) { return changeImage(event); } }), jsxRuntimeExports.jsx("div", { className: shape, onClick: function () { editImage(); }, children: imgUrl
-                            ? jsxRuntimeExports.jsx("img", { className: "avatarImage", alt: name || '', src: imgUrl })
-                            : jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: defaultImage, className: "avatarImage" }) }), jsxRuntimeExports.jsxs("p", { children: [sponsor ? jsxRuntimeExports.jsxs("span", { className: "sponsor", children: ["\u3010", sponsor || '', "\u3011", jsxRuntimeExports.jsx("br", {})] }) : null, jsxRuntimeExports.jsx("span", { className: "avatarName", children: name || '' }), id ? jsxRuntimeExports.jsxs("span", { className: "avatarId", children: ["@", id || ''] }) : null] })] })
-            : jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx("input", { id: 'imgfile', accept: "image/*", type: 'file', style: { display: 'none' }, onChange: function (event) { return changeImage(event); } }), jsxRuntimeExports.jsx("div", { className: shape, onClick: function () { editImage(); }, children: imgUrl
-                            ? jsxRuntimeExports.jsx("img", { className: "avatarImage", alt: name || '', src: imgUrl })
-                            : jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: defaultImage, className: "avatarImage" }) }), jsxRuntimeExports.jsxs("p", { children: [sponsor ? jsxRuntimeExports.jsxs("span", { className: "sponsor", children: ["\u3010", sponsor || '', "\u3011", jsxRuntimeExports.jsx("br", {})] }) : null, jsxRuntimeExports.jsx("span", { className: "avatarName", children: name || '' }), id ? jsxRuntimeExports.jsxs("span", { className: "avatarId", children: ["@", id || ''] }) : null] })] }) }));
+    var renderAvatar = require$$0.useCallback(function () {
+        return (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx("input", { id: "imgfile", accept: "image/*", type: "file", style: { display: "none" }, onChange: function (event) { return changeImage(event); } }), jsxRuntimeExports.jsx("div", { className: shape, onClick: function () {
+                        editImage();
+                    }, children: imgUrl ? (jsxRuntimeExports.jsx("img", { className: "avatarImage", alt: id || "", src: imgUrl })) : (jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: defaultImage, className: "avatarImage" })) })] }));
+    }, [imgUrl, defaultImage, shape]);
+    return (jsxRuntimeExports.jsx("div", { className: "avatar ".concat(size), children: link ? jsxRuntimeExports.jsx("a", { href: link, children: renderAvatar() }) : renderAvatar() }));
 }
 
 function Checkbox(_a) {
-    var id = _a.id, label = _a.label, value = _a.value; _a.required; var _c = _a.disabled, disabled = _c === void 0 ? false : _c, onChange = _a.onChange;
-    return (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx("input", { type: "checkbox", id: id, checked: value, disabled: disabled, onChange: function (e) { return onChange(e); } }), jsxRuntimeExports.jsx("label", { className: "label", onClick: function () { return onChange(!value); }, children: label })] }));
+    var id = _a.id, label = _a.label, checked = _a.checked; _a.required; var _c = _a.disabled, disabled = _c === void 0 ? false : _c, onChange = _a.onChange;
+    return (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx("input", { type: "checkbox", id: id, checked: checked, disabled: disabled, onChange: function (e) { return onChange(e); } }), jsxRuntimeExports.jsx("label", { className: "label", onClick: function () { return onChange(!checked); }, children: label })] }));
 }
 
 function IconButton(props) {
@@ -6193,11 +6196,9 @@ function Input(_a) {
 }
 
 function Selector(_a) {
-    var id = _a.id, _b = _a.label, label = _b === void 0 ? '' : _b, _c = _a.required, required = _c === void 0 ? false : _c, options = _a.options, selected = _a.selected, onChange = _a.onChange;
-    return (jsxRuntimeExports.jsxs("div", { className: "selector", children: [label
-                ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] }))
-                : null, jsxRuntimeExports.jsx("select", { value: selected || '', className: "options", onChange: function (e) { return onChange(e); }, children: options.map(function (option) {
-                    return jsxRuntimeExports.jsx("option", { value: option.value || '', children: option.label }, option.label);
+    var id = _a.id, _b = _a.label, label = _b === void 0 ? "" : _b, _c = _a.required, required = _c === void 0 ? false : _c, options = _a.options, selected = _a.selected, onChange = _a.onChange;
+    return (jsxRuntimeExports.jsxs("div", { className: "selector", children: [label ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] })) : null, jsxRuntimeExports.jsx("select", { value: selected || "", className: "options", onChange: function (e) { return onChange(e); }, children: options.map(function (option) {
+                    return (jsxRuntimeExports.jsx("option", { value: option.value || "", children: option.label }, option.label));
                 }) })] }));
 }
 

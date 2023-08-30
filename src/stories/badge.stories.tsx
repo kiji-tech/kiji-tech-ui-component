@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Badge } from "..";
 
 const meta: Meta = {
-  title: "Badge",
+  tags: ["autodocs"],
+  component: Badge,
   args: {
     text: "Badge",
     color: "main",
@@ -31,7 +32,8 @@ const meta: Meta = {
     return <Badge text={args.text} color={args.color} size={args.size} />;
   },
 };
-export const story: StoryObj = {
+export default meta;
+type Story = StoryObj<typeof Badge>;
+export const Basic: Story = {
   args: {},
 };
-export default meta;

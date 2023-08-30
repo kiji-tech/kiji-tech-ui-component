@@ -5,9 +5,9 @@
     "main": "dist/index.cjs.js",
     "scripts": {
         "start": "npm run storybook",
-        "build": "rollup -c --bundleConfigAsCjs",
         "storybook": "storybook dev -p 6006",
-        "build-storybook": "storybook build"
+        "build": "rollup -c --bundleConfigAsCjs",
+        "build:storybook": "storybook build"
     },
     "keywords": [],
     "author": "Shinji Harada",

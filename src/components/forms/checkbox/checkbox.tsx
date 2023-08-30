@@ -3,7 +3,7 @@ import "./checkbox.scss";
 export type CheckboxProps = {
   id: string;
   label?: string;
-  value: boolean;
+  checked: boolean;
   required?: boolean;
   disabled?: boolean;
   onChange: Function;
@@ -12,7 +12,7 @@ export type CheckboxProps = {
 export default function Checkbox({
   id,
   label,
-  value,
+  checked,
   required = false,
   disabled = false,
   onChange,
@@ -22,11 +22,11 @@ export default function Checkbox({
       <input
         type="checkbox"
         id={id}
-        checked={value}
+        checked={checked}
         disabled={disabled}
         onChange={(e) => onChange(e)}
       />
-      <label className="label" onClick={() => onChange(!value)}>
+      <label className="label" onClick={() => onChange(!checked)}>
         {label}
       </label>
     </>

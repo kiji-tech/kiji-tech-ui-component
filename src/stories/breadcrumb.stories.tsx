@@ -2,13 +2,15 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Breadcrumb } from "..";
 
 const meta: Meta<typeof Breadcrumb> = {
+  tags: ["autodocs"],
+  //   argTypes: [{}],
   component: Breadcrumb,
 };
 
 export default meta;
 type Story = StoryObj<typeof Breadcrumb>;
 
-export const Link1: Story = {
+export const Basic: Story = {
   render: () => {
     return (
       <>
