@@ -13,10 +13,48 @@ const meta: Meta<typeof Selector> = {
     onChange: () => {},
   },
   argTypes: {
-    id: { control: { type: "text" } },
-    label: { control: { type: "text" } },
-    required: { control: { type: "boolean" } },
-    selected: { control: { type: "inline-radio" }, options: ["1", "2", "3"] },
+    id: {
+      control: { type: "text" },
+      description: "セレクターのID",
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    label: {
+      control: { type: "text" },
+      description: "セレクタのラベル",
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    required: {
+      control: { type: "boolean" },
+      description: "必須ラベル",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    selected: {
+      control: { type: "inline-radio" },
+      options: ["1", "2", "3"],
+      description: "選択しているもののキー",
+      table: {
+        type: { summary: "string | number" },
+      },
+    },
+    options: {
+      description: "選択項目リスト",
+      table: {
+        type: { summary: "SelectorOption" },
+      },
+    },
+    onChange: {
+      description: "変更イベント",
+      table: {
+        type: { summary: "Function" },
+      },
+    },
   },
   render: (args) => {
     return (

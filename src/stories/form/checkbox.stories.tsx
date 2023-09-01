@@ -12,11 +12,44 @@ const meta: Meta<typeof Checkbox> = {
     disabled: false,
   },
   argTypes: {
-    id: { control: { type: "text" } },
-    label: { control: { type: "text" } },
-    checked: { control: { type: "boolean" } },
-    required: { control: { type: "boolean" } },
-    disabled: { control: { type: "boolean" } },
+    id: {
+      control: { type: "text" },
+      description: "チェックボックスのID",
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    label: {
+      control: { type: "text" },
+      description: "チェックボックスのラベル",
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    checked: {
+      control: { type: "boolean" },
+      description: "チェックボックのチェック状態",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    required: {
+      control: { type: "boolean" },
+      description: "必須フラグ",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    disabled: {
+      control: { type: "boolean" },
+      description: "非活性フラグ",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
   },
   render: (args) => {
     return (

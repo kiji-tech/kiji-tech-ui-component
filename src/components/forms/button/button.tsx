@@ -13,9 +13,9 @@ export type ButtonProps = {
 export default function Button({
   label,
   onClick,
+  color = "color-main",
   outline = false,
   radius = false,
-  color,
   disabled = false,
 }: ButtonProps) {
   const getClassName = (): string => {

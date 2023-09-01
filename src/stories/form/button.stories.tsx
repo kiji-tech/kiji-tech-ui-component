@@ -17,26 +17,56 @@ const meta: Meta<typeof Button> = {
       control: {
         type: "inline-radio",
       },
-      options: ["main", "accent", "clear"],
+      options: ["color-main", "color-accent", "color-clear"],
+      description: "ボタンの色を指定する",
+      table: {
+        type: { summary: "color-main | color-accent | color-clear" },
+        defaultValue: { summary: "main" },
+      },
     },
     label: {
       control: {
         type: "text",
+      },
+      description: "ボタンのラベル",
+      table: {
+        type: { summary: "string" },
       },
     },
     outline: {
       control: {
         type: "boolean",
       },
+      description: "ボタンのアウトライン",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
     },
     radius: {
       control: {
         type: "boolean",
       },
+      description: "ボタンの角",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
     },
     disabled: {
       control: {
         type: "boolean",
+      },
+      description: "非活性フラグ",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    onClick: {
+      description: "ボタンのクリックイベント",
+      table: {
+        type: { summary: "Function" },
       },
     },
   },
@@ -69,5 +99,13 @@ export const Accent: Story = {
   args: {
     label: "Accent",
     color: "color-accent",
+  },
+};
+
+export const Clear: Story = {
+  args: {
+    label: "Accent",
+    color: "color-clear",
+    outline: true,
   },
 };

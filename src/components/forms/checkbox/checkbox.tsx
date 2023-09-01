@@ -12,7 +12,7 @@ export type CheckboxProps = {
 export default function Checkbox({
   id,
   label,
-  checked,
+  checked = false,
   required = false,
   disabled = false,
   onChange,
@@ -24,6 +24,7 @@ export default function Checkbox({
         id={id}
         checked={checked}
         disabled={disabled}
+        required
         onChange={(e) => onChange(e)}
       />
       <label className="label" onClick={() => onChange(!checked)}>

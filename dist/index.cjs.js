@@ -1375,7 +1375,7 @@ function Breadcrumb(_a) {
 }
 
 function Button(_a) {
-    var label = _a.label, onClick = _a.onClick, _b = _a.outline, outline = _b === void 0 ? false : _b, _c = _a.radius, radius = _c === void 0 ? false : _c, color = _a.color, _d = _a.disabled, disabled = _d === void 0 ? false : _d;
+    var label = _a.label, onClick = _a.onClick, _b = _a.color, color = _b === void 0 ? "color-main" : _b, _c = _a.outline, outline = _c === void 0 ? false : _c, _d = _a.radius, radius = _d === void 0 ? false : _d, _e = _a.disabled, disabled = _e === void 0 ? false : _e;
     var getClassName = function () {
         var classes = ["btn"];
         if (outline)
@@ -3054,7 +3054,7 @@ var p = config.measurePerformance && PERFORMANCE && PERFORMANCE.mark && PERFORMA
   mark: noop$1,
   measure: noop$1
 };
-var preamble = "FA \"6.4.0\"";
+var preamble = "FA \"6.4.2\"";
 
 var begin = function begin(name) {
   p.mark("".concat(preamble, " ").concat(name, " begins"));
@@ -3931,7 +3931,7 @@ function replaceForPosition(node, position) {
             watchable: true
           }));
 
-          var element = DOCUMENT.createElement('svg');
+          var element = DOCUMENT.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
           if (position === '::before') {
             node.insertBefore(element, node.firstChild);
@@ -6163,8 +6163,8 @@ function Avatar(_a) {
 }
 
 function Checkbox(_a) {
-    var id = _a.id, label = _a.label, checked = _a.checked; _a.required; var _c = _a.disabled, disabled = _c === void 0 ? false : _c, onChange = _a.onChange;
-    return (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx("input", { type: "checkbox", id: id, checked: checked, disabled: disabled, onChange: function (e) { return onChange(e); } }), jsxRuntimeExports.jsx("label", { className: "label", onClick: function () { return onChange(!checked); }, children: label })] }));
+    var id = _a.id, label = _a.label, _b = _a.checked, checked = _b === void 0 ? false : _b; _a.required; var _d = _a.disabled, disabled = _d === void 0 ? false : _d, onChange = _a.onChange;
+    return (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx("input", { type: "checkbox", id: id, checked: checked, disabled: disabled, required: true, onChange: function (e) { return onChange(e); } }), jsxRuntimeExports.jsx("label", { className: "label", onClick: function () { return onChange(!checked); }, children: label })] }));
 }
 
 function IconButton(props) {
@@ -6184,15 +6184,15 @@ function IconButton(props) {
 }
 
 function Input(_a) {
-    var type = _a.type, id = _a.id, label = _a.label, value = _a.value, _b = _a.required, required = _b === void 0 ? false : _b, _c = _a.placeholder, placeholder = _c === void 0 ? '' : _c; _a.pattern; _a.patternDetail; _a.min; var max = _a.max, _f = _a.message, message = _f === void 0 ? '' : _f, onChange = _a.onChange, _g = _a.disabled, disabled = _g === void 0 ? false : _g;
+    var _b = _a.type, type = _b === void 0 ? "text" : _b, id = _a.id, label = _a.label, value = _a.value, _c = _a.required, required = _c === void 0 ? false : _c, _d = _a.placeholder, placeholder = _d === void 0 ? "" : _d; _a.pattern; _a.patternDetail; _a.min; var _h = _a.max, max = _h === void 0 ? 255 : _h, _j = _a.message, message = _j === void 0 ? "" : _j, onChange = _a.onChange, _k = _a.disabled, disabled = _k === void 0 ? false : _k;
     var change = function (e) {
-        if (typeof e.target.value == 'string')
+        if (typeof e.target.value == "string")
             value = e.target.value.slice(0, max);
         onChange(value);
     };
-    return (jsxRuntimeExports.jsxs("div", { className: 'inputForm', children: [label
-                ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] }))
-                : null, jsxRuntimeExports.jsx("input", { id: id, type: type, placeholder: placeholder, value: value, onChange: function (e) { change(e); }, disabled: disabled }), typeof value == 'string' && max ? jsxRuntimeExports.jsx("p", { className: 'viewLength', children: "".concat(value.length, " / ").concat(max.toString()) }) : jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}), jsxRuntimeExports.jsx("p", { className: 'message', children: message })] }));
+    return (jsxRuntimeExports.jsxs("div", { className: "inputForm", children: [label ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] })) : null, jsxRuntimeExports.jsx("input", { id: id, type: type, placeholder: placeholder, value: value, onChange: function (e) {
+                    change(e);
+                }, disabled: disabled }), typeof value == "string" && max ? (jsxRuntimeExports.jsx("p", { className: "viewLength", children: "".concat(value.length, " / ").concat(max.toString()) })) : (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {})), jsxRuntimeExports.jsx("p", { className: "message", children: message })] }));
 }
 
 function Selector(_a) {
@@ -6203,17 +6203,13 @@ function Selector(_a) {
 }
 
 function Textarea(_a) {
-    var id = _a.id, label = _a.label, value = _a.value, length = _a.length, _b = _a.disabled, disabled = _b === void 0 ? false : _b, _c = _a.required, required = _c === void 0 ? false : _c, onChange = _a.onChange;
+    var id = _a.id, label = _a.label, value = _a.value, _b = _a.length, length = _b === void 0 ? 255 : _b, _c = _a.disabled, disabled = _c === void 0 ? false : _c, _d = _a.required, required = _d === void 0 ? false : _d, onChange = _a.onChange;
     var change = function (e) {
-        if (typeof e.target.value == 'string')
+        if (typeof e.target.value == "string")
             value = e.target.value.slice(0, length);
         onChange(value);
     };
-    return (jsxRuntimeExports.jsxs("div", { className: "inputForms", children: [label ?
-                (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] }))
-                : null, jsxRuntimeExports.jsx("textarea", { id: id, value: value, onChange: function (e) { return change(e); }, disabled: disabled }), length && length > 0
-                ? jsxRuntimeExports.jsxs("p", { className: "viewLength", children: [value ? value.length : 0, " / ", length] })
-                : jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {})] }));
+    return (jsxRuntimeExports.jsxs("div", { className: "inputForms", children: [label ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] })) : null, jsxRuntimeExports.jsx("textarea", { id: id, value: value, onChange: function (e) { return change(e); }, disabled: disabled }), length && length > 0 ? (jsxRuntimeExports.jsxs("p", { className: "viewLength", children: [value ? value.length : 0, " / ", length] })) : (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}))] }));
 }
 
 var Skelton = function (_a) {

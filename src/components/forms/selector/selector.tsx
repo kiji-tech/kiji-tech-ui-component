@@ -8,7 +8,7 @@ export type SelectorOption = {
 export type SelectorProps = {
   id: string;
   label?: string;
-  required?: boolean;
+  required: boolean;
   selected: string | number;
   options: SelectorOption[];
   onChange: Function;
