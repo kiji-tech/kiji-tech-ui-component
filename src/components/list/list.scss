@@ -1,0 +1,25 @@
+@import "../../variable.scss";
+
+// === List ===
+.list {
+  margin-bottom: 16px;
+}
+
+.list-row {
+  border-bottom: 1px solid $main-opacity-color;
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+.list-header {
+  font-size: $md;
+  font-weight: bold;
+  background: $main-color;
+  color: $accent-color;
+}
+.list-col {
+  font-size: $md;
+  text-align: center;
+  display: inline-block;
+  padding: 8px 4px;
+}

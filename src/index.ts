@@ -3,7 +3,7 @@ export { default as Badge } from "./components/badge/badge";
 export { default as Breadcrumb } from "./components/breadcrumb/breadcrumb";
 export { default as Modal } from "./components/modal/modal";
 export { default as Pager } from "./components/pager/pager";
-
+export * from "./components/list/list";
 // === Form ===
 export { default as Avatar } from "./components/forms/avatar/avatar";
 export { default as Button } from "./components/forms/button/button";
