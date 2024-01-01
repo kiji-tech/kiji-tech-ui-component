@@ -6,6 +6,7 @@ import { CheckboxProps } from "../src/components/checkbox/checkbox";
 import { InputProps } from "../src/components/forms/input/input";
 import { ModalProps } from "../src/components/modal/modal";
 import { PagerProps } from "../src/components/pager/pager";
+import { TextProps } from "../src/components/text/text";
 import { IconButtonProps } from "../src/components/forms/icon.button/icon.button";
 import { SelectorProps } from "../src/components/forms/selector/selector";
 import { TextareaProps } from "../src/components/forms/textarea/textarea";
@@ -26,6 +27,7 @@ export declare const PagerProps: PagerProps;
 export declare const List: React.FC;
 export declare const ListRow: React.FC;
 export declare const ListColumn: React.FC;
+export declare const Text: React.FC<TextProps>;
 
 // === Form ===
 export declare const Avatar: React.FC<AvatarProps>;
