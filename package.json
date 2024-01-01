@@ -1,6 +1,6 @@
 {
     "name": "kiji-tech-ui-component",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "description": "",
     "main": "dist/index.cjs.js",
     "scripts": {
@@ -8,7 +8,7 @@
         "storybook": "storybook dev -p 6006",
         "build": "rollup -c --bundleConfigAsCjs",
         "build:storybook": "storybook build",
-        "update:lib" : "ncu -u | npm i | npm audit fix"
+        "update:lib": "ncu -u | npm i | npm audit fix"
     },
     "keywords": [],
     "author": "Shinji Harada",
