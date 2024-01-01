@@ -6057,6 +6057,11 @@ function Pager(_a) {
                 }, children: jsxRuntimeExports.jsx(FontAwesomeIcon, { icon: faAnglesRight }) })] }));
 }
 
+function Text(_a) {
+    var text = _a.text, _b = _a.size, size = _b === void 0 ? "md" : _b, _c = _a.weight, weight = _c === void 0 ? null : _c;
+    return jsxRuntimeExports.jsx("div", { className: "text ".concat(size, " ").concat(weight), children: text });
+}
+
 var List = function (_a) {
     var children = _a.children;
     return jsxRuntimeExports.jsx("div", { className: "list", children: children });
@@ -6272,4 +6277,5 @@ exports.SkeltonCard = SkeltonCard;
 exports.SkeltonGame = SkeltonGame;
 exports.SkeltonList = SkeltonList;
 exports.SkeltonRoom = SkeltonRoom;
+exports.Text = Text;
 exports.Textarea = Textarea;
