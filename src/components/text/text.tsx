@@ -3,8 +3,8 @@ import { Bold, Size } from "../../types";
 
 export type TextProps = {
   text: string;
-  size: Size;
-  weight: Bold | null;
+  size?: Size;
+  weight?: Bold | null;
 };
 
 export default function Text({ text, size = "md", weight = null }: TextProps) {

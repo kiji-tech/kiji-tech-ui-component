@@ -6,6 +6,7 @@ export type TextareaProps = {
   value: string;
   onChange: Function;
   length?: number;
+  height?: number;
   disabled?: boolean;
   required?: boolean;
 };
@@ -15,6 +16,7 @@ export default function Textarea({
   label,
   value,
   length = 255,
+  height = 100,
   disabled = false,
   required = false,
   onChange,
@@ -39,6 +41,7 @@ export default function Textarea({
       <textarea
         id={id}
         value={value}
+        style={{ height: height + "px" }}
         onChange={(e) => change(e)}
         disabled={disabled}
       ></textarea>

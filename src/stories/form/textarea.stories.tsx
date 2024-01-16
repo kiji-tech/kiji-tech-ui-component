@@ -9,6 +9,7 @@ const meta: Meta = {
     label: "ラベル",
     value: "",
     length: 255,
+    height: 100,
     required: false,
     disabled: false,
   },
@@ -42,6 +43,14 @@ const meta: Meta = {
         defaultValue: { summary: "255" },
       },
     },
+    height: {
+      control: { type: "number" },
+      description: "テキストエリアの高さ(px)",
+      table: {
+        type: { summary: "number" },
+        defaultValue: 100,
+      },
+    },
     required: {
       control: { type: "boolean" },
       description: "必須フラグ",
@@ -73,6 +82,7 @@ const meta: Meta = {
           label={args.label}
           value={args.value}
           length={args.length}
+          height={args.height}
           required={args.required}
           disabled={args.disabled}
           onChange={() => {}}

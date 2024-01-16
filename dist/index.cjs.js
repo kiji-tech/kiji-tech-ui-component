@@ -6229,13 +6229,13 @@ function Selector(_a) {
 }
 
 function Textarea(_a) {
-    var id = _a.id, label = _a.label, value = _a.value, _b = _a.length, length = _b === void 0 ? 255 : _b, _c = _a.disabled, disabled = _c === void 0 ? false : _c, _d = _a.required, required = _d === void 0 ? false : _d, onChange = _a.onChange;
+    var id = _a.id, label = _a.label, value = _a.value, _b = _a.length, length = _b === void 0 ? 255 : _b, _c = _a.height, height = _c === void 0 ? 100 : _c, _d = _a.disabled, disabled = _d === void 0 ? false : _d, _e = _a.required, required = _e === void 0 ? false : _e, onChange = _a.onChange;
     var change = function (e) {
         if (typeof e.target.value == "string")
             value = e.target.value.slice(0, length);
         onChange(value);
     };
-    return (jsxRuntimeExports.jsxs("div", { className: "inputForms", children: [label ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] })) : null, jsxRuntimeExports.jsx("textarea", { id: id, value: value, onChange: function (e) { return change(e); }, disabled: disabled }), length && length > 0 ? (jsxRuntimeExports.jsxs("p", { className: "viewLength", children: [value ? value.length : 0, " / ", length] })) : (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}))] }));
+    return (jsxRuntimeExports.jsxs("div", { className: "inputForms", children: [label ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] })) : null, jsxRuntimeExports.jsx("textarea", { id: id, value: value, style: { height: height + "px" }, onChange: function (e) { return change(e); }, disabled: disabled }), length && length > 0 ? (jsxRuntimeExports.jsxs("p", { className: "viewLength", children: [value ? value.length : 0, " / ", length] })) : (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}))] }));
 }
 
 var Skelton = function (_a) {
