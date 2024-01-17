@@ -5,9 +5,16 @@ export type ModalProps = {
   title: string;
   buttons: ButtonProps[];
   children: React.ReactNode;
+  isView?: boolean;
 };
 
-export default function Modal({ title, children, buttons }: ModalProps) {
+export default function Modal({
+  title,
+  children,
+  buttons,
+  isView = false,
+}: ModalProps) {
+  if (!isView) return null;
   return (
     <div className={"modal"}>
       <div className={"modalContent"}>

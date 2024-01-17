@@ -1392,7 +1392,9 @@ function Button(_a) {
 }
 
 function Modal(_a) {
-    var title = _a.title, children = _a.children, buttons = _a.buttons;
+    var title = _a.title, children = _a.children, buttons = _a.buttons, _b = _a.isView, isView = _b === void 0 ? false : _b;
+    if (!isView)
+        return null;
     return (jsxRuntimeExports.jsx("div", { className: "modal", children: jsxRuntimeExports.jsxs("div", { className: "modalContent", children: [jsxRuntimeExports.jsx("div", { className: "modalHeader", children: title }), jsxRuntimeExports.jsx("div", { className: "space" }), jsxRuntimeExports.jsx("div", { className: "modalChildren", children: children }), jsxRuntimeExports.jsx("div", { className: "space" }), jsxRuntimeExports.jsx("div", { className: "space" }), jsxRuntimeExports.jsx("div", { className: "modalButtons", children: buttons.map(function (btn, index) {
                         return (jsxRuntimeExports.jsx("div", { className: "width-short", children: jsxRuntimeExports.jsx(Button, { label: btn.label, radius: btn.radius, color: btn.color, onClick: function () { return btn.onClick(); } }, "modal-button".concat(index)) }));
                     }) })] }) }));
