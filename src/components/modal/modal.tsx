@@ -3,17 +3,17 @@ import Button, { ButtonProps } from "../forms/button/button";
 
 export type ModalProps = {
   title: string;
-  message: string;
   buttons: ButtonProps[];
+  children: React.ReactNode;
 };
 
-export default function Modal({ title, message, buttons }: ModalProps) {
+export default function Modal({ title, children, buttons }: ModalProps) {
   return (
     <div className={"modal"}>
       <div className={"modalContent"}>
         <div className={`modalHeader`}>{title}</div>
         <div className={`space`}></div>
-        <div className={`modalMessage`}>{message}</div>
+        <div className={`modalChildren`}>{children}</div>
         <div className={`space`}></div>
         <div className={`space`}></div>
         <div className={`modalButtons`}>

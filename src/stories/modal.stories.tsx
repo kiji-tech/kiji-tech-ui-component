@@ -6,7 +6,7 @@ const meta: Meta = {
   component: Modal,
   args: {
     title: "モーダルタイトル",
-    message: "モーダルメッセージ",
+    children: "モーダルエレメント",
     buttons: [
       { color: "clear", label: "キャンセル", onClick: () => {}, radius: true },
       { color: "main", label: "OK", onClick: () => {}, radius: true },
@@ -14,7 +14,7 @@ const meta: Meta = {
   },
   argTypes: {
     title: { control: { type: "text" } },
-    message: { control: { type: "text" } },
+    children: { control: { type: "text" }, description: "モーダル内要素" },
     buttons: {},
   },
   render: (args) => {
@@ -22,7 +22,7 @@ const meta: Meta = {
       <div style={{ height: "300px" }}>
         <Modal
           title={args.title}
-          message={args.message}
+          children={<>{args.children}</>}
           buttons={args.buttons}
         />
       </div>
