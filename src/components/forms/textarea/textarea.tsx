@@ -1,10 +1,11 @@
 import "./textarea.scss";
 
 export type TextareaProps = {
-  id: string;
-  label: string;
-  value: string;
-  onChange: Function;
+  id?: string;
+  name?: string;
+  label?: string;
+  value?: string;
+  onChange?: Function;
   length?: number;
   height?: number;
   disabled?: boolean;
@@ -13,13 +14,14 @@ export type TextareaProps = {
 
 export default function Textarea({
   id,
+  name,
   label,
   value,
   length = 255,
   height = 100,
   disabled = false,
   required = false,
-  onChange,
+  onChange = () => {},
 }: TextareaProps) {
   const change = (e: any) => {
     if (typeof e.target.value == "string")
@@ -40,6 +42,7 @@ export default function Textarea({
       ) : null}
       <textarea
         id={id}
+        name={name}
         value={value}
         style={{ height: height + "px" }}
         onChange={(e) => change(e)}

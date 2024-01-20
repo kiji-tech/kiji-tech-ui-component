@@ -2,9 +2,10 @@ import "./input.scss";
 
 export type InputProps = {
   type: "email" | "search" | "password" | "number" | "text";
-  id: string;
+  id?: string;
+  name?: string;
   label?: string;
-  value: string | number;
+  value?: string | number;
   required?: boolean;
   placeholder?: string;
   pattern?: string;
@@ -12,13 +13,14 @@ export type InputProps = {
   min?: number;
   max?: number;
   message?: string;
-  onChange: Function;
+  onChange?: Function;
   disabled?: boolean;
 };
 
 export default function Input({
   type = "text",
   id,
+  name,
   label,
   value,
   required = false,
@@ -28,7 +30,7 @@ export default function Input({
   min = 0,
   max = 255,
   message = "",
-  onChange,
+  onChange = () => {},
   disabled = false,
 }: InputProps) {
   const change = (e: any) => {
@@ -49,6 +51,7 @@ export default function Input({
       ) : null}
       <input
         id={id}
+        name={name}
         type={type}
         placeholder={placeholder!}
         value={value}

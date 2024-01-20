@@ -4,15 +4,15 @@ import Button, { ButtonProps } from "../forms/button/button";
 export type ModalProps = {
   title: string;
   buttons: ButtonProps[];
-  children: React.ReactNode;
   isView?: boolean;
+  children: React.ReactNode;
 };
 
 export default function Modal({
   title,
-  children,
   buttons,
   isView = false,
+  children,
 }: ModalProps) {
   if (!isView) return null;
   return (
@@ -32,7 +32,7 @@ export default function Modal({
                   label={btn.label}
                   radius={btn.radius}
                   color={btn.color}
-                  onClick={() => btn.onClick()}
+                  onClick={btn.onClick}
                 />
               </div>
             );

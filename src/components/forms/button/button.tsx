@@ -3,7 +3,8 @@ import "./button.scss";
 
 export type ButtonProps = {
   label: string;
-  onClick: Function;
+  type?: "button" | "submit" | undefined;
+  onClick?: Function;
   outline?: boolean;
   radius?: boolean;
   color?: Color;
@@ -12,7 +13,8 @@ export type ButtonProps = {
 
 export default function Button({
   label,
-  onClick,
+  type = undefined,
+  onClick = () => {},
   color = "color-main",
   outline = false,
   radius = false,
@@ -31,6 +33,7 @@ export default function Button({
     <>
       <button
         className={getClassName()}
+        type={type}
         disabled={disabled}
         onClick={() => onClick()}
       >

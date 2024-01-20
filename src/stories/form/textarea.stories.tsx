@@ -6,6 +6,7 @@ const meta: Meta = {
   component: Textarea,
   args: {
     id: "",
+    name: "",
     label: "ラベル",
     value: "",
     length: 255,
@@ -17,6 +18,13 @@ const meta: Meta = {
     id: {
       control: { type: "text" },
       description: "テキストエリアのID",
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    name: {
+      control: { type: "text" },
+      description: "テキストエリアのname",
       table: {
         type: { summary: "string" },
       },

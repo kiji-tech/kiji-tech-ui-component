@@ -7,6 +7,7 @@ const meta: Meta<typeof Button> = {
   args: {
     label: "Button.",
     color: "color-main",
+    type: "button",
     radius: true,
     outline: false,
     disabled: false,
@@ -31,6 +32,16 @@ const meta: Meta<typeof Button> = {
       description: "ボタンのラベル",
       table: {
         type: { summary: "string" },
+      },
+    },
+    type: {
+      control: {
+        type: "inline-radio",
+      },
+      description: "ボタンの種類",
+      options: ["button", "submit"],
+      table: {
+        type: { summary: "button | submit | undefined" },
       },
     },
     outline: {
@@ -75,7 +86,8 @@ const meta: Meta<typeof Button> = {
       <div style={{ width: "160px" }}>
         <Button
           label={args.label}
-          onClick={() => args.onClick()}
+          type={args.type}
+          onClick={() => {}}
           color={args.color || "color-main"}
           radius={args.radius || false}
           disabled={args.disabled || false}

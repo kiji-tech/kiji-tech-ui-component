@@ -1375,7 +1375,7 @@ function Breadcrumb(_a) {
 }
 
 function Button(_a) {
-    var label = _a.label, onClick = _a.onClick, _b = _a.color, color = _b === void 0 ? "color-main" : _b, _c = _a.outline, outline = _c === void 0 ? false : _c, _d = _a.radius, radius = _d === void 0 ? false : _d, _e = _a.disabled, disabled = _e === void 0 ? false : _e;
+    var label = _a.label, _b = _a.type, type = _b === void 0 ? undefined : _b, _c = _a.onClick, onClick = _c === void 0 ? function () { } : _c, _d = _a.color, color = _d === void 0 ? "color-main" : _d, _e = _a.outline, outline = _e === void 0 ? false : _e, _f = _a.radius, radius = _f === void 0 ? false : _f, _g = _a.disabled, disabled = _g === void 0 ? false : _g;
     var getClassName = function () {
         var classes = ["btn"];
         if (outline)
@@ -1388,15 +1388,15 @@ function Button(_a) {
             classes.push("main");
         return classes.join(" ");
     };
-    return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx("button", { className: getClassName(), disabled: disabled, onClick: function () { return onClick(); }, children: label }) }));
+    return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx("button", { className: getClassName(), type: type, disabled: disabled, onClick: function () { return onClick(); }, children: label }) }));
 }
 
 function Modal(_a) {
-    var title = _a.title, children = _a.children, buttons = _a.buttons, _b = _a.isView, isView = _b === void 0 ? false : _b;
+    var title = _a.title, buttons = _a.buttons, _b = _a.isView, isView = _b === void 0 ? false : _b, children = _a.children;
     if (!isView)
         return null;
     return (jsxRuntimeExports.jsx("div", { className: "modal", children: jsxRuntimeExports.jsxs("div", { className: "modalContent", children: [jsxRuntimeExports.jsx("div", { className: "modalHeader", children: title }), jsxRuntimeExports.jsx("div", { className: "space" }), jsxRuntimeExports.jsx("div", { className: "modalChildren", children: children }), jsxRuntimeExports.jsx("div", { className: "space" }), jsxRuntimeExports.jsx("div", { className: "space" }), jsxRuntimeExports.jsx("div", { className: "modalButtons", children: buttons.map(function (btn, index) {
-                        return (jsxRuntimeExports.jsx("div", { className: "width-short", children: jsxRuntimeExports.jsx(Button, { label: btn.label, radius: btn.radius, color: btn.color, onClick: function () { return btn.onClick(); } }, "modal-button".concat(index)) }));
+                        return (jsxRuntimeExports.jsx("div", { className: "width-short", children: jsxRuntimeExports.jsx(Button, { label: btn.label, radius: btn.radius, color: btn.color, onClick: btn.onClick }, "modal-button".concat(index)) }));
                     }) })] }) }));
 }
 
@@ -6212,13 +6212,13 @@ function IconButton(props) {
 }
 
 function Input(_a) {
-    var _b = _a.type, type = _b === void 0 ? "text" : _b, id = _a.id, label = _a.label, value = _a.value, _c = _a.required, required = _c === void 0 ? false : _c, _d = _a.placeholder, placeholder = _d === void 0 ? "" : _d; _a.pattern; _a.patternDetail; _a.min; var _h = _a.max, max = _h === void 0 ? 255 : _h, _j = _a.message, message = _j === void 0 ? "" : _j, onChange = _a.onChange, _k = _a.disabled, disabled = _k === void 0 ? false : _k;
+    var _b = _a.type, type = _b === void 0 ? "text" : _b, id = _a.id, name = _a.name, label = _a.label, value = _a.value, _c = _a.required, required = _c === void 0 ? false : _c, _d = _a.placeholder, placeholder = _d === void 0 ? "" : _d; _a.pattern; _a.patternDetail; _a.min; var _h = _a.max, max = _h === void 0 ? 255 : _h, _j = _a.message, message = _j === void 0 ? "" : _j, _k = _a.onChange, onChange = _k === void 0 ? function () { } : _k, _l = _a.disabled, disabled = _l === void 0 ? false : _l;
     var change = function (e) {
         if (typeof e.target.value == "string")
             value = e.target.value.slice(0, max);
         onChange(value);
     };
-    return (jsxRuntimeExports.jsxs("div", { className: "inputForm", children: [label ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] })) : null, jsxRuntimeExports.jsx("input", { id: id, type: type, placeholder: placeholder, value: value, onChange: function (e) {
+    return (jsxRuntimeExports.jsxs("div", { className: "inputForm", children: [label ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] })) : null, jsxRuntimeExports.jsx("input", { id: id, name: name, type: type, placeholder: placeholder, value: value, onChange: function (e) {
                     change(e);
                 }, disabled: disabled }), typeof value == "string" && max ? (jsxRuntimeExports.jsx("p", { className: "viewLength", children: "".concat(value.length, " / ").concat(max.toString()) })) : (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {})), jsxRuntimeExports.jsx("p", { className: "message", children: message })] }));
 }
@@ -6231,13 +6231,13 @@ function Selector(_a) {
 }
 
 function Textarea(_a) {
-    var id = _a.id, label = _a.label, value = _a.value, _b = _a.length, length = _b === void 0 ? 255 : _b, _c = _a.height, height = _c === void 0 ? 100 : _c, _d = _a.disabled, disabled = _d === void 0 ? false : _d, _e = _a.required, required = _e === void 0 ? false : _e, onChange = _a.onChange;
+    var id = _a.id, name = _a.name, label = _a.label, value = _a.value, _b = _a.length, length = _b === void 0 ? 255 : _b, _c = _a.height, height = _c === void 0 ? 100 : _c, _d = _a.disabled, disabled = _d === void 0 ? false : _d, _e = _a.required, required = _e === void 0 ? false : _e, _f = _a.onChange, onChange = _f === void 0 ? function () { } : _f;
     var change = function (e) {
         if (typeof e.target.value == "string")
             value = e.target.value.slice(0, length);
         onChange(value);
     };
-    return (jsxRuntimeExports.jsxs("div", { className: "inputForms", children: [label ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] })) : null, jsxRuntimeExports.jsx("textarea", { id: id, value: value, style: { height: height + "px" }, onChange: function (e) { return change(e); }, disabled: disabled }), length && length > 0 ? (jsxRuntimeExports.jsxs("p", { className: "viewLength", children: [value ? value.length : 0, " / ", length] })) : (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}))] }));
+    return (jsxRuntimeExports.jsxs("div", { className: "inputForms", children: [label ? (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsxs("label", { htmlFor: id, children: [label, required ? " *" : ""] }), jsxRuntimeExports.jsx("div", { className: "space" })] })) : null, jsxRuntimeExports.jsx("textarea", { id: id, name: name, value: value, style: { height: height + "px" }, onChange: function (e) { return change(e); }, disabled: disabled }), length && length > 0 ? (jsxRuntimeExports.jsxs("p", { className: "viewLength", children: [value ? value.length : 0, " / ", length] })) : (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}))] }));
 }
 
 var Skelton = function (_a) {

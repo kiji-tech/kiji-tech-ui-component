@@ -23,57 +23,6 @@
   padding: 8px 4px;
 }
 
-@keyframes skelton-animation {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-.skelton {
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-  background: rgba(150, 150, 150, 0.4);
-}
-.skelton::before {
-  height: 100%;
-  width: 100%;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-  animation: skelton-animation 1.2s linear infinite;
-}
-
-.skelton-circle {
-  border-radius: 50% !important;
-  height: 60px;
-  width: 60px;
-  margin-bottom: 8px;
-}
-
-.skelton-fill {
-  width: 100%;
-  height: 14px;
-  margin-bottom: 8px;
-}
-
-.skelton-half {
-  width: 75%;
-  height: 12px;
-  margin-bottom: 8px;
-}
-
-.skelton-image {
-  width: 100%;
-  height: 120px;
-  margin-bottom: 8px;
-}
-
 .width-fill {
   width: 100%;
 }
@@ -175,6 +124,14 @@
   text-overflow: ellipsis;
   margin: auto;
   text-align: center;
+}
+
+div.breadcrumb {
+  margin-bottom: 8px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  max-width: 800px;
 }
 
 .width-fill {
@@ -280,6 +237,57 @@
   margin-right: 8px;
 }
 
+@keyframes skelton-animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.skelton {
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(150, 150, 150, 0.4);
+}
+.skelton::before {
+  height: 100%;
+  width: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  animation: skelton-animation 1.2s linear infinite;
+}
+
+.skelton-circle {
+  border-radius: 50% !important;
+  height: 60px;
+  width: 60px;
+  margin-bottom: 8px;
+}
+
+.skelton-fill {
+  width: 100%;
+  height: 14px;
+  margin-bottom: 8px;
+}
+
+.skelton-half {
+  width: 75%;
+  height: 12px;
+  margin-bottom: 8px;
+}
+
+.skelton-image {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 8px;
+}
+
 .text.xs {
   font-size: 10px;
 }
@@ -297,14 +305,6 @@
 }
 .text.bold {
   font-weight: bold;
-}
-
-div.breadcrumb {
-  margin-bottom: 8px;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  max-width: 800px;
 }
 
 .pagers {
@@ -339,320 +339,6 @@ div.breadcrumb {
   padding-top: 8px;
 }
 
-input[type=checkbox] {
-  display: none;
-}
-input[type=checkbox] + label {
-  box-sizing: border-box;
-  cursor: pointer;
-  display: inline-block;
-  padding: 4px 32px;
-  position: relative;
-  width: auto;
-}
-input[type=checkbox] + label::before {
-  background: #fff;
-  border: 1px solid rgb(110, 110, 110);
-  content: "";
-  display: block;
-  height: 16px;
-  left: 5px;
-  margin-top: -8px;
-  position: absolute;
-  top: 50%;
-  width: 16px;
-}
-input[type=checkbox] + label::after {
-  border-right: 3px solid #f8744a;
-  border-bottom: 3px solid #f8744a;
-  content: "";
-  display: block;
-  height: 9px;
-  left: 10px;
-  margin-top: -7px;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  transform: rotate(45deg);
-  width: 5px;
-}
-input[type=checkbox]:checked + label::after {
-  opacity: 1;
-}
-input[type=checkbox]:disabled + label::before {
-  background: rgba(150, 150, 150, 0.2);
-}
-
-.width-fill {
-  width: 100%;
-}
-
-.width-33 {
-  width: 33%;
-}
-
-.width-x-short {
-  width: 80px;
-}
-
-.width-short {
-  width: 120px;
-}
-
-.width-middle {
-  width: 160px;
-}
-
-.width-long {
-  width: 240px;
-}
-
-.space {
-  margin-bottom: 8px;
-}
-
-.color-main {
-  background: #0f2136;
-  color: #f8744a;
-}
-
-.color-accent {
-  background: #f8744a;
-  color: #ffffff;
-}
-
-.color-clear {
-  background: rgba(0, 0, 0, 0);
-  color: #f8744a;
-}
-
-.color-win {
-  background: rgb(245, 110, 70);
-  color: #ffffff;
-}
-
-.color-lose {
-  background: rgb(98, 121, 223);
-  color: #ffffff;
-}
-
-.color-abort {
-  background: rgba(150, 150, 150, 0.8);
-  color: #ffffff;
-}
-
-.color-new {
-  background: green;
-  color: #ffffff;
-}
-
-.inputForm {
-  margin-top: 16px;
-  margin-bottom: 8px;
-  width: 100%;
-}
-.inputForm label {
-  background: #0f2136;
-  color: #f8744a;
-  font-size: 14px;
-  padding: 8px 16px;
-  border-radius: 8px;
-}
-.inputForm input {
-  height: 30px;
-  padding: 4px 8px;
-  width: calc(100% - 20px);
-}
-.inputForm p.viewLength {
-  float: right;
-  font-size: 10px;
-  margin: 0;
-}
-.inputForm p.message {
-  font-size: 12px;
-  color: #f8744a;
-  margin: 5px 0 0 10px;
-}
-
-.avatar {
-  text-align: center;
-  margin: auto;
-}
-.avatar a,
-.avatar a:visited,
-.avatar a:link,
-.avatar a:hover,
-.avatar a:active, .avatar {
-  text-decoration: none;
-  text-align: center;
-  color: black;
-}
-.avatar a.xs,
-.avatar a:visited.xs,
-.avatar a:link.xs,
-.avatar a:hover.xs,
-.avatar a:active.xs, .avatar.xs {
-  width: 50px;
-  font-size: 12px;
-}
-.avatar a.xs .circle,
-.avatar a:visited.xs .circle,
-.avatar a:link.xs .circle,
-.avatar a:hover.xs .circle,
-.avatar a:active.xs .circle, .avatar.xs .circle {
-  width: 35px !important;
-  height: 35px !important;
-}
-.avatar a.sm,
-.avatar a:visited.sm,
-.avatar a:link.sm,
-.avatar a:hover.sm,
-.avatar a:active.sm, .avatar.sm {
-  width: 120px;
-  font-size: 12px;
-}
-.avatar a.sm .circle,
-.avatar a:visited.sm .circle,
-.avatar a:link.sm .circle,
-.avatar a:hover.sm .circle,
-.avatar a:active.sm .circle, .avatar.sm .circle {
-  width: 40px !important;
-  height: 40px !important;
-}
-.avatar a.md,
-.avatar a:visited.md,
-.avatar a:link.md,
-.avatar a:hover.md,
-.avatar a:active.md, .avatar.md {
-  width: 160px;
-  font-size: 14px;
-}
-.avatar a.md .circle,
-.avatar a:visited.md .circle,
-.avatar a:link.md .circle,
-.avatar a:hover.md .circle,
-.avatar a:active.md .circle, .avatar.md .circle {
-  width: 72px !important;
-  height: 72px !important;
-}
-.avatar a.lg,
-.avatar a:visited.lg,
-.avatar a:link.lg,
-.avatar a:hover.lg,
-.avatar a:active.lg, .avatar.lg {
-  width: 180px;
-  font-size: 18px;
-}
-.avatar a.lg .circle,
-.avatar a:visited.lg .circle,
-.avatar a:link.lg .circle,
-.avatar a:hover.lg .circle,
-.avatar a:active.lg .circle, .avatar.lg .circle {
-  width: 80px !important;
-  height: 80px !important;
-}
-.avatar a .rectangle,
-.avatar a:visited .rectangle,
-.avatar a:link .rectangle,
-.avatar a:hover .rectangle,
-.avatar a:active .rectangle, .avatar .rectangle {
-  overflow: hidden;
-  position: relative !important;
-  width: 80px;
-  height: 120px;
-  padding: 5%;
-  margin: auto;
-  border-radius: 8px;
-  background: #0f2136;
-  color: #f8744a;
-}
-.avatar a .rectangle .avatarImage,
-.avatar a:visited .rectangle .avatarImage,
-.avatar a:link .rectangle .avatarImage,
-.avatar a:hover .rectangle .avatarImage,
-.avatar a:active .rectangle .avatarImage, .avatar .rectangle .avatarImage {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: fill;
-}
-.avatar a .rectangle + p,
-.avatar a:visited .rectangle + p,
-.avatar a:link .rectangle + p,
-.avatar a:hover .rectangle + p,
-.avatar a:active .rectangle + p, .avatar .rectangle + p {
-  inline-size: 100%;
-  margin: 5px 0;
-}
-.avatar a .rectangle + p .sponsor,
-.avatar a .rectangle + p .avatarId,
-.avatar a:visited .rectangle + p .sponsor,
-.avatar a:visited .rectangle + p .avatarId,
-.avatar a:link .rectangle + p .sponsor,
-.avatar a:link .rectangle + p .avatarId,
-.avatar a:hover .rectangle + p .sponsor,
-.avatar a:hover .rectangle + p .avatarId,
-.avatar a:active .rectangle + p .sponsor,
-.avatar a:active .rectangle + p .avatarId, .avatar .rectangle + p .sponsor,
-.avatar .rectangle + p .avatarId {
-  font-size: 12px;
-}
-.avatar a .rectangle + p .avatarId,
-.avatar a:visited .rectangle + p .avatarId,
-.avatar a:link .rectangle + p .avatarId,
-.avatar a:hover .rectangle + p .avatarId,
-.avatar a:active .rectangle + p .avatarId, .avatar .rectangle + p .avatarId {
-  color: rgb(110, 110, 110);
-}
-.avatar a .circle,
-.avatar a:visited .circle,
-.avatar a:link .circle,
-.avatar a:hover .circle,
-.avatar a:active .circle, .avatar .circle {
-  overflow: hidden;
-  position: relative !important;
-  padding: 5%;
-  margin: auto;
-  border-radius: 50%;
-  background: #0f2136;
-  color: #f8744a;
-}
-.avatar a .circle .avatarImage,
-.avatar a:visited .circle .avatarImage,
-.avatar a:link .circle .avatarImage,
-.avatar a:hover .circle .avatarImage,
-.avatar a:active .circle .avatarImage, .avatar .circle .avatarImage {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
-}
-.avatar a .circle + p,
-.avatar a:visited .circle + p,
-.avatar a:link .circle + p,
-.avatar a:hover .circle + p,
-.avatar a:active .circle + p, .avatar .circle + p {
-  inline-size: 100%;
-  margin: 5px 0;
-}
-.avatar a .circle + p .sponsor,
-.avatar a .circle + p .avatarId,
-.avatar a:visited .circle + p .sponsor,
-.avatar a:visited .circle + p .avatarId,
-.avatar a:link .circle + p .sponsor,
-.avatar a:link .circle + p .avatarId,
-.avatar a:hover .circle + p .sponsor,
-.avatar a:hover .circle + p .avatarId,
-.avatar a:active .circle + p .sponsor,
-.avatar a:active .circle + p .avatarId, .avatar .circle + p .sponsor,
-.avatar .circle + p .avatarId {
-  font-size: 12px;
-}
-.avatar a .circle + p .avatarId,
-.avatar a:visited .circle + p .avatarId,
-.avatar a:link .circle + p .avatarId,
-.avatar a:hover .circle + p .avatarId,
-.avatar a:active .circle + p .avatarId, .avatar .circle + p .avatarId {
-  color: rgb(110, 110, 110);
-}
 .width-fill {
   width: 100%;
 }
@@ -957,4 +643,319 @@ input[type=checkbox]:disabled + label::before {
   float: right;
   font-size: 10px;
   margin: 0;
+}
+
+.width-fill {
+  width: 100%;
+}
+
+.width-33 {
+  width: 33%;
+}
+
+.width-x-short {
+  width: 80px;
+}
+
+.width-short {
+  width: 120px;
+}
+
+.width-middle {
+  width: 160px;
+}
+
+.width-long {
+  width: 240px;
+}
+
+.space {
+  margin-bottom: 8px;
+}
+
+.color-main {
+  background: #0f2136;
+  color: #f8744a;
+}
+
+.color-accent {
+  background: #f8744a;
+  color: #ffffff;
+}
+
+.color-clear {
+  background: rgba(0, 0, 0, 0);
+  color: #f8744a;
+}
+
+.color-win {
+  background: rgb(245, 110, 70);
+  color: #ffffff;
+}
+
+.color-lose {
+  background: rgb(98, 121, 223);
+  color: #ffffff;
+}
+
+.color-abort {
+  background: rgba(150, 150, 150, 0.8);
+  color: #ffffff;
+}
+
+.color-new {
+  background: green;
+  color: #ffffff;
+}
+
+.inputForm {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+.inputForm label {
+  background: #0f2136;
+  color: #f8744a;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+.inputForm input {
+  height: 30px;
+  padding: 4px 8px;
+  width: calc(100% - 20px);
+}
+.inputForm p.viewLength {
+  float: right;
+  font-size: 10px;
+  margin: 0;
+}
+.inputForm p.message {
+  font-size: 12px;
+  color: #f8744a;
+  margin: 5px 0 0 10px;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox] + label {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px 32px;
+  position: relative;
+  width: auto;
+}
+input[type=checkbox] + label::before {
+  background: #fff;
+  border: 1px solid rgb(110, 110, 110);
+  content: "";
+  display: block;
+  height: 16px;
+  left: 5px;
+  margin-top: -8px;
+  position: absolute;
+  top: 50%;
+  width: 16px;
+}
+input[type=checkbox] + label::after {
+  border-right: 3px solid #f8744a;
+  border-bottom: 3px solid #f8744a;
+  content: "";
+  display: block;
+  height: 9px;
+  left: 10px;
+  margin-top: -7px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  width: 5px;
+}
+input[type=checkbox]:checked + label::after {
+  opacity: 1;
+}
+input[type=checkbox]:disabled + label::before {
+  background: rgba(150, 150, 150, 0.2);
+}
+
+.avatar {
+  text-align: center;
+  margin: auto;
+}
+.avatar a,
+.avatar a:visited,
+.avatar a:link,
+.avatar a:hover,
+.avatar a:active, .avatar {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+.avatar a.xs,
+.avatar a:visited.xs,
+.avatar a:link.xs,
+.avatar a:hover.xs,
+.avatar a:active.xs, .avatar.xs {
+  width: 50px;
+  font-size: 12px;
+}
+.avatar a.xs .circle,
+.avatar a:visited.xs .circle,
+.avatar a:link.xs .circle,
+.avatar a:hover.xs .circle,
+.avatar a:active.xs .circle, .avatar.xs .circle {
+  width: 35px !important;
+  height: 35px !important;
+}
+.avatar a.sm,
+.avatar a:visited.sm,
+.avatar a:link.sm,
+.avatar a:hover.sm,
+.avatar a:active.sm, .avatar.sm {
+  width: 120px;
+  font-size: 12px;
+}
+.avatar a.sm .circle,
+.avatar a:visited.sm .circle,
+.avatar a:link.sm .circle,
+.avatar a:hover.sm .circle,
+.avatar a:active.sm .circle, .avatar.sm .circle {
+  width: 40px !important;
+  height: 40px !important;
+}
+.avatar a.md,
+.avatar a:visited.md,
+.avatar a:link.md,
+.avatar a:hover.md,
+.avatar a:active.md, .avatar.md {
+  width: 160px;
+  font-size: 14px;
+}
+.avatar a.md .circle,
+.avatar a:visited.md .circle,
+.avatar a:link.md .circle,
+.avatar a:hover.md .circle,
+.avatar a:active.md .circle, .avatar.md .circle {
+  width: 72px !important;
+  height: 72px !important;
+}
+.avatar a.lg,
+.avatar a:visited.lg,
+.avatar a:link.lg,
+.avatar a:hover.lg,
+.avatar a:active.lg, .avatar.lg {
+  width: 180px;
+  font-size: 18px;
+}
+.avatar a.lg .circle,
+.avatar a:visited.lg .circle,
+.avatar a:link.lg .circle,
+.avatar a:hover.lg .circle,
+.avatar a:active.lg .circle, .avatar.lg .circle {
+  width: 80px !important;
+  height: 80px !important;
+}
+.avatar a .rectangle,
+.avatar a:visited .rectangle,
+.avatar a:link .rectangle,
+.avatar a:hover .rectangle,
+.avatar a:active .rectangle, .avatar .rectangle {
+  overflow: hidden;
+  position: relative !important;
+  width: 80px;
+  height: 120px;
+  padding: 5%;
+  margin: auto;
+  border-radius: 8px;
+  background: #0f2136;
+  color: #f8744a;
+}
+.avatar a .rectangle .avatarImage,
+.avatar a:visited .rectangle .avatarImage,
+.avatar a:link .rectangle .avatarImage,
+.avatar a:hover .rectangle .avatarImage,
+.avatar a:active .rectangle .avatarImage, .avatar .rectangle .avatarImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill;
+}
+.avatar a .rectangle + p,
+.avatar a:visited .rectangle + p,
+.avatar a:link .rectangle + p,
+.avatar a:hover .rectangle + p,
+.avatar a:active .rectangle + p, .avatar .rectangle + p {
+  inline-size: 100%;
+  margin: 5px 0;
+}
+.avatar a .rectangle + p .sponsor,
+.avatar a .rectangle + p .avatarId,
+.avatar a:visited .rectangle + p .sponsor,
+.avatar a:visited .rectangle + p .avatarId,
+.avatar a:link .rectangle + p .sponsor,
+.avatar a:link .rectangle + p .avatarId,
+.avatar a:hover .rectangle + p .sponsor,
+.avatar a:hover .rectangle + p .avatarId,
+.avatar a:active .rectangle + p .sponsor,
+.avatar a:active .rectangle + p .avatarId, .avatar .rectangle + p .sponsor,
+.avatar .rectangle + p .avatarId {
+  font-size: 12px;
+}
+.avatar a .rectangle + p .avatarId,
+.avatar a:visited .rectangle + p .avatarId,
+.avatar a:link .rectangle + p .avatarId,
+.avatar a:hover .rectangle + p .avatarId,
+.avatar a:active .rectangle + p .avatarId, .avatar .rectangle + p .avatarId {
+  color: rgb(110, 110, 110);
+}
+.avatar a .circle,
+.avatar a:visited .circle,
+.avatar a:link .circle,
+.avatar a:hover .circle,
+.avatar a:active .circle, .avatar .circle {
+  overflow: hidden;
+  position: relative !important;
+  padding: 5%;
+  margin: auto;
+  border-radius: 50%;
+  background: #0f2136;
+  color: #f8744a;
+}
+.avatar a .circle .avatarImage,
+.avatar a:visited .circle .avatarImage,
+.avatar a:link .circle .avatarImage,
+.avatar a:hover .circle .avatarImage,
+.avatar a:active .circle .avatarImage, .avatar .circle .avatarImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+.avatar a .circle + p,
+.avatar a:visited .circle + p,
+.avatar a:link .circle + p,
+.avatar a:hover .circle + p,
+.avatar a:active .circle + p, .avatar .circle + p {
+  inline-size: 100%;
+  margin: 5px 0;
+}
+.avatar a .circle + p .sponsor,
+.avatar a .circle + p .avatarId,
+.avatar a:visited .circle + p .sponsor,
+.avatar a:visited .circle + p .avatarId,
+.avatar a:link .circle + p .sponsor,
+.avatar a:link .circle + p .avatarId,
+.avatar a:hover .circle + p .sponsor,
+.avatar a:hover .circle + p .avatarId,
+.avatar a:active .circle + p .sponsor,
+.avatar a:active .circle + p .avatarId, .avatar .circle + p .sponsor,
+.avatar .circle + p .avatarId {
+  font-size: 12px;
+}
+.avatar a .circle + p .avatarId,
+.avatar a:visited .circle + p .avatarId,
+.avatar a:link .circle + p .avatarId,
+.avatar a:hover .circle + p .avatarId,
+.avatar a:active .circle + p .avatarId, .avatar .circle + p .avatarId {
+  color: rgb(110, 110, 110);
 }

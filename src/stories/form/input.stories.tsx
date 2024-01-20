@@ -7,6 +7,7 @@ const meta: Meta = {
   args: {
     type: "text",
     id: "id",
+    name: "name",
     label: "Label",
     value: "",
     required: false,
@@ -32,6 +33,13 @@ const meta: Meta = {
     id: {
       control: { type: "text" },
       description: "入力フォームのID",
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    name: {
+      control: { type: "text" },
+      description: "入力フォームのName",
       table: {
         type: { summary: "string" },
       },
