@@ -4,7 +4,7 @@ import "./button.scss";
 
 export type ButtonProps = {
   label: string;
-  type?: "button" | "submit" | undefined;
+  type?: "button" | "submit";
   onClick?: MouseEventHandler<HTMLButtonElement>;
   outline?: boolean;
   radius?: boolean;
@@ -14,7 +14,7 @@ export type ButtonProps = {
 
 export default function Button({
   label,
-  type = undefined,
+  type = "button",
   onClick = undefined,
   color = "color-main",
   outline = false,
