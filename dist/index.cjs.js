@@ -1375,7 +1375,7 @@ function Breadcrumb(_a) {
 }
 
 function Button(_a) {
-    var label = _a.label, _b = _a.type, type = _b === void 0 ? undefined : _b, _c = _a.onClick, onClick = _c === void 0 ? function () { } : _c, _d = _a.color, color = _d === void 0 ? "color-main" : _d, _e = _a.outline, outline = _e === void 0 ? false : _e, _f = _a.radius, radius = _f === void 0 ? false : _f, _g = _a.disabled, disabled = _g === void 0 ? false : _g;
+    var label = _a.label, _b = _a.type, type = _b === void 0 ? undefined : _b, _c = _a.onClick, onClick = _c === void 0 ? undefined : _c, _d = _a.color, color = _d === void 0 ? "color-main" : _d, _e = _a.outline, outline = _e === void 0 ? false : _e, _f = _a.radius, radius = _f === void 0 ? false : _f, _g = _a.disabled, disabled = _g === void 0 ? false : _g;
     var getClassName = function () {
         var classes = ["btn"];
         if (outline)
@@ -1388,7 +1388,7 @@ function Button(_a) {
             classes.push("main");
         return classes.join(" ");
     };
-    return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx("button", { className: getClassName(), type: type, disabled: disabled, onClick: function () { return onClick(); }, children: label }) }));
+    return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx("button", { className: getClassName(), type: type, disabled: disabled, onClick: onClick, children: label }) }));
 }
 
 function Modal(_a) {

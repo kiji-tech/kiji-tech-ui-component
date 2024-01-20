@@ -1,10 +1,11 @@
+import { MouseEventHandler } from "react";
 import { Color } from "../../../types";
 import "./button.scss";
 
 export type ButtonProps = {
   label: string;
   type?: "button" | "submit" | undefined;
-  onClick?: Function;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   outline?: boolean;
   radius?: boolean;
   color?: Color;
@@ -14,7 +15,7 @@ export type ButtonProps = {
 export default function Button({
   label,
   type = undefined,
-  onClick = () => {},
+  onClick = undefined,
   color = "color-main",
   outline = false,
   radius = false,
@@ -35,7 +36,7 @@ export default function Button({
         className={getClassName()}
         type={type}
         disabled={disabled}
-        onClick={() => onClick()}
+        onClick={onClick}
       >
         {label}
       </button>
