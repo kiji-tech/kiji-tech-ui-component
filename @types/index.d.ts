@@ -19,17 +19,18 @@ import {
 } from "../src/index";
 
 // === Common ===
-export declare const Badge: React.FC<BadgeProps>;
 export declare const BadgeProps: BadgeProps;
-export declare const Modal: React.FC<ModalProps>;
+export declare const Badge: ({ props }: BadgeProps) => {};
 export declare const ModalProps: ModalProps;
+export declare const Modal: ({ props }: ModalProps) => {};
 export declare const Pager: React.FC<PagerProps>;
 export declare const PagerProps: PagerProps;
 export declare const List: React.FC;
 export declare const ListRow: React.FC;
 export declare const ListColumn: React.FC;
 export declare const Text: React.FC<TextProps>;
-export declare const ThemeProvider: React.FC<ThemeProps>;
+export declare const ThemeProps;
+export declare const ThemeProvider: ({ props }: ThemeProps) => {};
 
 // === Form ===
 export declare const Avatar: React.FC<AvatarProps>;
