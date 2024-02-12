@@ -15,6 +15,7 @@ import {
   SkeltonList,
   SkeltonGame,
   SkeltonRoom,
+  ThemeProps,
 } from "../src/index";
 
 // === Common ===
@@ -28,6 +29,7 @@ export declare const List: React.FC;
 export declare const ListRow: React.FC;
 export declare const ListColumn: React.FC;
 export declare const Text: React.FC<TextProps>;
+export declare const ThemeProvider: React.Provider<ThemeProps>;
 
 // === Form ===
 export declare const Avatar: React.FC<AvatarProps>;
