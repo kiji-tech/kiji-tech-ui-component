@@ -1,3 +1,5 @@
+"use client";
+
 import "./text.scss";
 import { Bold, Size } from "../../types";
 

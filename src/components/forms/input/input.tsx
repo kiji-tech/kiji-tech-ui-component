@@ -1,3 +1,5 @@
+"use client";
+
 import { useTheme } from "../../../providers/theme";
 import {
   getPrimaryTheme,
@@ -67,7 +69,9 @@ export default function Input({
         type={type}
         placeholder={placeholder!}
         value={value}
-        className={`${getSecondaryTheme(theme)} ${getSecondaryBorderTheme(theme)} ${radius ? "radius" : ""}`}
+        className={`${getSecondaryTheme(theme)} ${getSecondaryBorderTheme(
+          theme
+        )} ${radius ? "radius" : ""}`}
         onChange={(e) => {
           change(e);
         }}

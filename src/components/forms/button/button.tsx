@@ -1,6 +1,7 @@
+"use client";
+
 import "./button.scss";
 import { MouseEventHandler } from "react";
-import { Color } from "../../../types";
 import { useTheme } from "../../../providers/theme";
 import {
   getPrimaryBorderTheme,

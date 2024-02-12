@@ -1,3 +1,5 @@
+"use client";
+
 import "./list.scss";
 
 type ListProps = {} & React.SuspenseProps;

@@ -1,3 +1,5 @@
+"use client";
+
 import "./avatar.scss";
 import { Size } from "../../../types";
 import { ChangeEvent, useCallback } from "react";

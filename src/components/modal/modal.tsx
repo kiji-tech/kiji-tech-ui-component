@@ -1,3 +1,5 @@
+"use client";
+
 import "./modal.scss";
 import Button, { ButtonProps } from "../forms/button/button";
 import { useTheme } from "../../providers/theme";

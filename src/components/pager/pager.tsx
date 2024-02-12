@@ -1,4 +1,6 @@
+"use client";
 import "./pager.scss";
+
 import { useCallback, useEffect, useState } from "react";
 import {
   faAnglesLeft,

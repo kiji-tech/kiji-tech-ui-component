@@ -1,5 +1,10 @@
+"use client";
+
 import { useTheme } from "../../../providers/theme";
-import { getPrimaryTheme, getSecondaryTheme } from "../../../utils/provider.utils";
+import {
+  getPrimaryTheme,
+  getSecondaryTheme,
+} from "../../../utils/provider.utils";
 import "./textarea.scss";
 
 export type TextareaProps = {

@@ -1,3 +1,5 @@
+"use client";
+
 import "./badge.scss";
 import { Size } from "../../types";
 import { useTheme } from "../../providers/theme";
