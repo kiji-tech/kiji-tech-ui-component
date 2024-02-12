@@ -1361,7 +1361,7 @@ if (process.env.NODE_ENV === 'production') {
 var jsxRuntimeExports = jsxRuntime.exports;
 
 var ThemeContext = React.createContext({
-    theme: "theme1",
+    theme: "theme2",
 });
 var useTheme = function () { return React.useContext(ThemeContext); };
 

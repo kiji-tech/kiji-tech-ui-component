@@ -7,7 +7,7 @@ export type ThemeProps = {
 };
 
 const ThemeContext = React.createContext({
-  theme: "theme1",
+  theme: "theme2",
 } as { theme: Theme });
 
 export const ThemeProvider = ({
