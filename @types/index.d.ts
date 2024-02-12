@@ -19,34 +19,35 @@ import {
 } from "../src/index";
 
 // === Common ===
-export declare const BadgeProps: BadgeProps;
-export declare const Badge: ({ props }: BadgeProps) => {};
-export declare const ModalProps: ModalProps;
-export declare const Modal: ({ props }: ModalProps) => {};
-export declare const Pager: React.FC<PagerProps>;
-export declare const PagerProps: PagerProps;
-export declare const List: React.FC;
-export declare const ListRow: React.FC;
-export declare const ListColumn: React.FC;
-export declare const Text: React.FC<TextProps>;
+export declare const BadgeProps;
+export declare const Badge;
+export declare const ModalProps;
+export declare const Modal;
+export declare const PagerProps;
+export declare const Pager;
+export declare const List;
+export declare const ListRow;
+export declare const ListColumn;
+export declare const TextProps;
+export declare const Text;
 export declare const ThemeProps;
-export declare const ThemeProvider: ({ props }: ThemeProps) => {};
+export declare const ThemeProvider;
 
 // === Form ===
-export declare const Avatar: React.FC<AvatarProps>;
-export declare const AvatarProps: AvatarProps;
-export declare const Button: React.FC<ButtonProps>;
-export declare const ButtonProps: ButtonProps;
-export declare const Checkbox: React.FC<CheckboxProps>;
-export declare const CheckboxProps: CheckboxProps;
-export declare const IconButton: React.FC<IconButtonProps>;
-export declare const IconButtonProps: IconButtonProps;
-export declare const Input: React.FC<InputProps>;
-export declare const InputProps: InputProps;
-export declare const Selector: React.FC<SelectorProps>;
-export declare const SelectorProps: SelectorProps;
-export declare const Textarea: React.FC<TextareaProps>;
-export declare const TextareaProps: TextareaProps;
+export declare const Avatar;
+export declare const AvatarProps;
+export declare const Button;
+export declare const ButtonProps;
+export declare const Checkbox;
+export declare const CheckboxProps;
+export declare const IconButton;
+export declare const IconButtonProps;
+export declare const Input;
+export declare const InputProps;
+export declare const Selector;
+export declare const SelectorProps;
+export declare const Textarea;
+export declare const TextareaProps;
 
 export declare const SkeltonCard: SkeltonCard;
 export declare const SkeltonList: SkeltonList;
