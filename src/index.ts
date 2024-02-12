@@ -16,3 +16,6 @@ export { default as Textarea } from "./components/forms/textarea/textarea";
 
 // Skelton
 export * from "./components/skelton/skelton";
+
+//
+export * from "./providers/theme";

@@ -1363,6 +1363,10 @@ var jsxRuntimeExports = jsxRuntime.exports;
 var ThemeContext = React.createContext({
     theme: "theme2",
 });
+var ThemeProvider = function (_a) {
+    var children = _a.children, theme = _a.theme;
+    return jsxRuntimeExports.jsx(ThemeContext.Provider, { value: theme, children: children });
+};
 var useTheme = function () { return React.useContext(ThemeContext); };
 
 var getPrimaryTheme = function (theme) {
@@ -6299,3 +6303,5 @@ exports.SkeltonList = SkeltonList;
 exports.SkeltonRoom = SkeltonRoom;
 exports.Text = Text;
 exports.Textarea = Textarea;
+exports.ThemeProvider = ThemeProvider;
+exports.useTheme = useTheme;
