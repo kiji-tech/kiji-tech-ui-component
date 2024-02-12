@@ -1,17 +1,27 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Avatar } from "../..";
+import { ThemeProvider } from "../../providers/theme";
 
-const meta: Meta<typeof Avatar> = {
-  component: Avatar,
+const meta: Meta = {
   tags: ["autodocs"],
+  component: Avatar,
   args: {
     id: "id",
     imgUrl: "",
     link: "",
     shape: "circle",
     size: "md",
+    theme: "theme1",
   },
   argTypes: {
+    theme: {
+      control: { type: "inline-radio" },
+      description: "テーマ",
+      options: ["theme1", "theme2"],
+      table: {
+        type: { summary: "theme1 | theme2" },
+      },
+    },
     id: {
       control: { type: "text" },
       description: "",
@@ -54,13 +64,15 @@ const meta: Meta<typeof Avatar> = {
   },
   render: (args) => {
     return (
-      <Avatar
-        id={args.id}
-        imgUrl={args.imgUrl}
-        link={args.link}
-        shape={args.shape}
-        size={args.size}
-      />
+      <ThemeProvider theme={{ theme: args.theme }}>
+        <Avatar
+          id={args.id}
+          imgUrl={args.imgUrl}
+          link={args.link}
+          shape={args.shape}
+          size={args.size}
+        />
+      </ThemeProvider>
     );
   },
 };

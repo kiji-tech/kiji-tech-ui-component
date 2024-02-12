@@ -1,10 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Checkbox } from "../..";
+import { ThemeProvider } from "../../providers/theme";
 
-const meta: Meta<typeof Checkbox> = {
+const meta: Meta = {
   component: Checkbox,
   tags: ["autodocs"],
   args: {
+    theme: "theme1",
     id: "checkbox",
     label: "チェックボックス",
     checked: false,
@@ -12,6 +14,14 @@ const meta: Meta<typeof Checkbox> = {
     disabled: false,
   },
   argTypes: {
+    theme: {
+      control: { type: "inline-radio" },
+      description: "テーマ",
+      options: ["theme1", "theme2"],
+      table: {
+        type: { summary: "theme1 | theme2" },
+      },
+    },
     id: {
       control: { type: "text" },
       description: "チェックボックスのID",
@@ -53,14 +63,16 @@ const meta: Meta<typeof Checkbox> = {
   },
   render: (args) => {
     return (
-      <Checkbox
-        id={args.id}
-        label={args.label}
-        checked={args.checked}
-        required={args.required}
-        disabled={args.disabled}
-        onChange={() => {}}
-      />
+      <ThemeProvider theme={{ theme: args.theme }}>
+        <Checkbox
+          id={args.id}
+          label={args.label}
+          checked={args.checked}
+          required={args.required}
+          disabled={args.disabled}
+          onChange={() => {}}
+        />
+      </ThemeProvider>
     );
   },
 };

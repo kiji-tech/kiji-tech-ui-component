@@ -1,3 +1,9 @@
+import { useTheme } from "../../../providers/theme";
+import {
+  getPrimaryTheme,
+  getSecondaryBorderTheme,
+  getSecondaryTheme,
+} from "../../../utils/provider.utils";
 import "./selector.scss";
 
 export type SelectorOption = {
@@ -11,6 +17,7 @@ export type SelectorProps = {
   required: boolean;
   selected: string | number;
   options: SelectorOption[];
+  radius?: boolean;
   onChange: Function;
 };
 
@@ -20,13 +27,18 @@ export default function Selector({
   required = false,
   options,
   selected,
+  radius = false,
   onChange,
 }: SelectorProps) {
+  const { theme } = useTheme();
   return (
     <div className={"selector"}>
       {label ? (
         <>
-          <label htmlFor={id}>
+          <label
+            htmlFor={id}
+            className={`${getPrimaryTheme(theme)} ${radius ? "radius" : ""}`}
+          >
             {label}
             {required ? " *" : ""}
           </label>
@@ -35,7 +47,9 @@ export default function Selector({
       ) : null}
       <select
         value={selected || ""}
-        className={"options"}
+        className={`${getSecondaryTheme(theme)} ${getSecondaryBorderTheme(
+          theme
+        )} options ${radius ? "radius" : ""}`}
         onChange={(e) => onChange(e)}
       >
         {options.map((option) => {

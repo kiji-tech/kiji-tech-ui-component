@@ -13,8 +13,6 @@ export default function IconButton(props: IconButtonProps) {
         let classes: string[] = ["iconButton"];
         if (props.outline) classes.push("outline");
         if (props.radius) classes.push("radius");
-        if (props.color) classes.push(props.color);
-        else classes.push("main");
 
         return classes.join(' ');
     }

@@ -1,3 +1,5 @@
+import { useTheme } from "../../../providers/theme";
+import { getPrimaryTheme, getSecondaryTheme } from "../../../utils/provider.utils";
 import "./textarea.scss";
 
 export type TextareaProps = {
@@ -7,9 +9,9 @@ export type TextareaProps = {
   value?: string;
   onChange?: Function;
   length?: number;
-  height?: number;
   disabled?: boolean;
   required?: boolean;
+  radius: boolean;
 };
 
 export default function Textarea({
@@ -18,11 +20,12 @@ export default function Textarea({
   label,
   value,
   length = 255,
-  height = 100,
   disabled = false,
   required = false,
+  radius = false,
   onChange = () => {},
 }: TextareaProps) {
+  const { theme } = useTheme();
   const change = (e: any) => {
     if (typeof e.target.value == "string")
       value = e.target.value.slice(0, length);
@@ -33,7 +36,10 @@ export default function Textarea({
     <div className={"inputForms"}>
       {label ? (
         <>
-          <label htmlFor={id}>
+          <label
+            htmlFor={id}
+            className={`${getPrimaryTheme(theme)} ${radius ? "radius" : ""}`}
+          >
             {label}
             {required ? " *" : ""}
           </label>
@@ -44,12 +50,12 @@ export default function Textarea({
         id={id}
         name={name}
         value={value}
-        style={{ height: height + "px" }}
         onChange={(e) => change(e)}
+        className={`${getSecondaryTheme(theme)} ${radius ? "radius" : ""}`}
         disabled={disabled}
       ></textarea>
       {length && length > 0 ? (
-        <p className={"viewLength"}>
+        <p className={`viewLength`}>
           {value ? value.length : 0} / {length}
         </p>
       ) : (

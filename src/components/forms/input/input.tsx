@@ -1,3 +1,9 @@
+import { useTheme } from "../../../providers/theme";
+import {
+  getPrimaryTheme,
+  getSecondaryBorderTheme,
+  getSecondaryTheme,
+} from "../../../utils/provider.utils";
 import "./input.scss";
 
 export type InputProps = {
@@ -15,6 +21,7 @@ export type InputProps = {
   message?: string;
   onChange?: Function;
   disabled?: boolean;
+  radius?: boolean;
 };
 
 export default function Input({
@@ -32,7 +39,9 @@ export default function Input({
   message = "",
   onChange = () => {},
   disabled = false,
+  radius = false,
 }: InputProps) {
+  const { theme } = useTheme();
   const change = (e: any) => {
     if (typeof e.target.value == "string") value = e.target.value.slice(0, max);
     onChange(value);
@@ -42,7 +51,10 @@ export default function Input({
     <div className={"inputForm"}>
       {label ? (
         <>
-          <label htmlFor={id}>
+          <label
+            htmlFor={id}
+            className={`${getPrimaryTheme(theme)} ${radius ? "radius" : ""}`}
+          >
             {label}
             {required ? " *" : ""}
           </label>
@@ -55,6 +67,7 @@ export default function Input({
         type={type}
         placeholder={placeholder!}
         value={value}
+        className={`${getSecondaryTheme(theme)} ${getSecondaryBorderTheme(theme)} ${radius ? "radius" : ""}`}
         onChange={(e) => {
           change(e);
         }}

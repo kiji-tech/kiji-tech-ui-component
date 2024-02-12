@@ -1,3 +1,8 @@
+import { useTheme } from "../../../providers/theme";
+import {
+  getPrimaryTheme,
+  getSecondaryTheme,
+} from "../../../utils/provider.utils";
 import "./checkbox.scss";
 
 export type CheckboxProps = {
@@ -17,19 +22,23 @@ export default function Checkbox({
   disabled = false,
   onChange,
 }: CheckboxProps) {
+  const { theme } = useTheme();
   return (
-    <>
+    <div>
       <input
         type="checkbox"
         id={id}
         checked={checked}
         disabled={disabled}
-        required
+        required={required}
         onChange={(e) => onChange(e)}
       />
-      <label className="label" onClick={() => onChange(!checked)}>
+      <label
+        className={`label ${getSecondaryTheme(theme)}`}
+        onClick={() => onChange(!checked)}
+      >
         {label}
       </label>
-    </>
+    </div>
   );
 }

@@ -1,5 +1,7 @@
 import "./modal.scss";
 import Button, { ButtonProps } from "../forms/button/button";
+import { useTheme } from "../../providers/theme";
+import { getPrimaryTheme, getSecondaryTheme } from "../../utils/provider.utils";
 
 export type ModalProps = {
   title: string;
@@ -15,15 +17,18 @@ export default function Modal({
   children,
 }: ModalProps) {
   if (!isView) return null;
+  const { theme } = useTheme();
   return (
-    <div className={"modal"}>
-      <div className={"modalContent"}>
-        <div className={`modalHeader`}>{title}</div>
+    <div className={`modal ${getPrimaryTheme(theme)}`}>
+      <div className={`modalContent ${getSecondaryTheme(theme)}`}>
+        <div className={`modalHeader ${getSecondaryTheme(theme)}`}>{title}</div>
         <div className={`space`}></div>
-        <div className={`modalChildren`}>{children}</div>
+        <div className={`modalChildren ${getSecondaryTheme(theme)}`}>
+          {children}
+        </div>
         <div className={`space`}></div>
         <div className={`space`}></div>
-        <div className={`modalButtons`}>
+        <div className={`modalButtons ${getSecondaryTheme(theme)}`}>
           {buttons.map((btn: ButtonProps, index) => {
             return (
               <div className={`width-short`}>
@@ -31,7 +36,6 @@ export default function Modal({
                   key={`modal-button${index}`}
                   label={btn.label}
                   radius={btn.radius}
-                  color={btn.color}
                   onClick={btn.onClick}
                 />
               </div>

@@ -1,6 +1,11 @@
+import "./button.scss";
 import { MouseEventHandler } from "react";
 import { Color } from "../../../types";
-import "./button.scss";
+import { useTheme } from "../../../providers/theme";
+import {
+  getPrimaryBorderTheme,
+  getPrimaryTheme,
+} from "../../../utils/provider.utils";
 
 export type ButtonProps = {
   label: string;
@@ -8,7 +13,6 @@ export type ButtonProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   outline?: boolean;
   radius?: boolean;
-  color?: Color;
   disabled?: boolean;
 };
 
@@ -16,17 +20,17 @@ export default function Button({
   label,
   type = "button",
   onClick = undefined,
-  color = "color-main",
   outline = false,
   radius = false,
   disabled = false,
 }: ButtonProps) {
+  const { theme } = useTheme();
+
   const getClassName = (): string => {
     let classes: string[] = ["btn"];
-    if (outline) classes.push("outline");
-    if (radius) classes.push("btn-radius");
-    if (color) classes.push(color);
-    else classes.push("main");
+    if (outline) classes.push(getPrimaryBorderTheme(theme));
+    if (radius) classes.push("radius");
+    classes.push(getPrimaryTheme(theme));
 
     return classes.join(" ");
   };

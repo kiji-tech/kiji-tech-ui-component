@@ -4,6 +4,7 @@
 .badge {
   border-radius: 50px;
   font-weight: bold;
+  text-align: center;
 
   &.xs {
     padding: 4px 8px;
@@ -35,13 +36,5 @@
     height: 28px;
     padding: 10px 16px;
     line-height: 28px;
-  }
-
-  p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: auto;
-    text-align: center;
   }
 }

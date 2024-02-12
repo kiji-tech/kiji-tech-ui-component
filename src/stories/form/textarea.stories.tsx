@@ -1,10 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Textarea } from "../..";
+import { ThemeProvider } from "../../providers/theme";
 
 const meta: Meta = {
   tags: ["autodocs"],
   component: Textarea,
   args: {
+    theme: "theme1",
     id: "",
     name: "",
     label: "ラベル",
@@ -13,8 +15,17 @@ const meta: Meta = {
     height: 100,
     required: false,
     disabled: false,
+    radius: false,
   },
   argTypes: {
+    theme: {
+      control: { type: "inline-radio" },
+      description: "テーマ",
+      options: ["theme1", "theme2"],
+      table: {
+        type: { summary: "theme1 | theme2" },
+      },
+    },
     id: {
       control: { type: "text" },
       description: "テキストエリアのID",
@@ -75,6 +86,15 @@ const meta: Meta = {
         defaultValue: { summary: "false" },
       },
     },
+    radius: {
+      control: { type: "boolean" },
+      description: "角丸",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+
     onChange: {
       description: "テキストエリア 変更イベント",
       table: {
@@ -84,18 +104,20 @@ const meta: Meta = {
   },
   render: (args) => {
     return (
-      <div style={{ width: "400px" }}>
-        <Textarea
-          id={args.id}
-          label={args.label}
-          value={args.value}
-          length={args.length}
-          height={args.height}
-          required={args.required}
-          disabled={args.disabled}
-          onChange={() => {}}
-        />
-      </div>
+      <ThemeProvider theme={{ theme: args.theme }}>
+        <div style={{ width: "400px", height: args.height }}>
+          <Textarea
+            id={args.id}
+            label={args.label}
+            value={args.value}
+            length={args.length}
+            required={args.required}
+            disabled={args.disabled}
+            radius={args.radius}
+            onChange={() => {}}
+          />
+        </div>
+      </ThemeProvider>
     );
   },
 };

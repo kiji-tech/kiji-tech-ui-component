@@ -1,18 +1,21 @@
-@import '../../../variable.scss';
-@import '../../../styles.scss';
+@import "../../../variable.scss";
+@import "../../../styles.scss";
 
 .selector {
-    width : 100%;
-    label {
-        background : $main-color;
-        color: $accent-color;
-        font-size: $md;
-        padding : 8px 16px;
-        border-radius: $radius-md;
-        margin-bottom : 8px !important;
+  width: 100%;
+  label {
+    font-size: $md;
+    padding: 8px 16px;
+    &.radius {
+      border-radius: $radius-md;
     }
-    .options {
-        width : calc(100%);
-        padding : 2px 0 2px 4px;
+  }
+  .options {
+    margin-top: 4px;
+    width: calc(100%);
+    padding: 2px 0 2px 4px;
+    &.radius {
+      border-radius: $radius-md;
     }
+  }
 }

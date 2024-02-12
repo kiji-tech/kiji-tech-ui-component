@@ -54,8 +54,6 @@
       padding: 5%;
       margin: auto;
       border-radius: $radius-md;
-      background: $main-color;
-      color: $accent-color;
 
       .avatarImage {
         width: 100% !important;
@@ -70,7 +68,7 @@
           font-size: $sm;
         }
         .avatarId {
-          color: $gray-color1;
+          color: $gray1;
         }
         .avatarName {
         }
@@ -83,8 +81,6 @@
       padding: 5%;
       margin: auto;
       border-radius: 50%;
-      background: $main-color;
-      color: $accent-color;
 
       .avatarImage {
         width: 100% !important;
@@ -99,7 +95,7 @@
           font-size: $sm;
         }
         .avatarId {
-          color: $gray-color1;
+          color: $gray1;
         }
         .avatarName {
         }

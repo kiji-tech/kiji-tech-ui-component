@@ -1,23 +1,33 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Button, Modal } from "..";
+import { Modal, Text } from "..";
+import { ThemeProvider } from "../providers/theme";
 
 const meta: Meta = {
   tags: ["autodocs"],
   component: Modal,
   args: {
+    theme: "theme1",
     title: "モーダルタイトル",
     children: (
-      <div style={{ width: "100px" }}>
-        <Button label="モーダルコンテンツ" onClick={() => {}} />
+      <div style={{ width: "100%", height: "100px" }}>
+        <Text text="モーダルコンテンツ" />
       </div>
     ),
     buttons: [
-      { color: "clear", label: "キャンセル", onClick: () => {}, radius: true },
-      { color: "main", label: "OK", onClick: () => {}, radius: true },
+      { label: "キャンセル", onClick: () => {}, radius: true },
+      { label: "OK", onClick: () => {}, radius: true },
     ],
     isView: true,
   },
   argTypes: {
+    theme: {
+      control: { type: "inline-radio" },
+      description: "テーマ",
+      options: ["theme1", "theme2"],
+      table: {
+        type: { summary: "theme1 | theme2" },
+      },
+    },
     title: { control: { type: "text" } },
     children: { control: { type: "text" }, description: "モーダル内要素" },
     buttons: {},
@@ -25,14 +35,16 @@ const meta: Meta = {
   },
   render: (args) => {
     return (
-      <div style={{ height: "300px" }}>
-        <Modal
-          title={args.title}
-          children={<>{args.children}</>}
-          buttons={args.buttons}
-          isView={args.isView}
-        />
-      </div>
+      <ThemeProvider theme={{ theme: args.theme }}>
+        <div style={{ height: "300px" }}>
+          <Modal
+            title={args.title}
+            children={<>{args.children}</>}
+            buttons={args.buttons}
+            isView={args.isView}
+          />
+        </div>
+      </ThemeProvider>
     );
   },
 };

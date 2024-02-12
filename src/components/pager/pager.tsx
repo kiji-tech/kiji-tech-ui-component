@@ -7,6 +7,8 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTheme } from "../../providers/theme";
+import { getPrimaryTheme, getSecondaryTheme } from "../../utils/provider.utils";
 
 const pagerMax = 5;
 
@@ -17,6 +19,7 @@ export type PagerProps = {
 };
 
 export default function Pager({ num, max, onClick }: PagerProps) {
+  const { theme } = useTheme();
   const [pages, setPages] = useState<number[]>([]);
 
   useEffect(() => {
@@ -37,7 +40,9 @@ export default function Pager({ num, max, onClick }: PagerProps) {
           return (
             <div
               key={value}
-              className={`pager ${num == value ? "active" : ""}`}
+              className={`pager ${
+                num == value ? getPrimaryTheme(theme) : getSecondaryTheme(theme)
+              }`}
               onClick={() => onClick(idx + 1)}
             >
               {value}
@@ -46,7 +51,7 @@ export default function Pager({ num, max, onClick }: PagerProps) {
         })}
       </>
     );
-  }, [num, max, pages]);
+  }, [num, max, pages, theme]);
 
   const clickEvent = useCallback(
     (n: number) => {
@@ -60,7 +65,7 @@ export default function Pager({ num, max, onClick }: PagerProps) {
     <div className={"pagers"}>
       {/* 最初 */}
       <div
-        className={"pager"}
+        className={`pager ${getSecondaryTheme(theme)}`}
         onClick={() => {
           if (num != 1) clickEvent(1);
         }}
@@ -68,18 +73,24 @@ export default function Pager({ num, max, onClick }: PagerProps) {
         <FontAwesomeIcon icon={faAnglesLeft} />
       </div>
       {/* 1つ前 */}
-      <div className={"pager"} onClick={() => clickEvent(num - 1)}>
+      <div
+        className={`pager ${getSecondaryTheme(theme)}`}
+        onClick={() => clickEvent(num - 1)}
+      >
         <FontAwesomeIcon icon={faChevronLeft} />
       </div>
       {/* 1 ~ max 最大数を横幅で変える? */}
       {getNumList()}
       {/* 1つ後 */}
-      <div className={"pager"} onClick={() => clickEvent(num + 1)}>
+      <div
+        className={`pager ${getSecondaryTheme(theme)}`}
+        onClick={() => clickEvent(num + 1)}
+      >
         <FontAwesomeIcon icon={faChevronRight} />
       </div>
       {/* 最後 */}
       <div
-        className={"pager"}
+        className={`pager ${getSecondaryTheme(theme)}`}
         onClick={() => {
           if (num != max) clickEvent(max);
         }}

@@ -13,7 +13,7 @@ input[type="checkbox"] {
     width: auto;
     &::before {
       background: #fff;
-      border: 1px solid $gray-color1;
+      border: 1px solid $gray1;
       content: "";
       display: block;
       height: $checkbox-size;
@@ -47,6 +47,6 @@ input[type="checkbox"] {
   }
 
   &:disabled + label::before {
-    background: $gray-color5;
+    background: $gray4;
   }
 }

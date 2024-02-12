@@ -4,6 +4,8 @@ import { ChangeEvent, useCallback } from "react";
 import imageCompression, { Options } from "browser-image-compression";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { useTheme } from "../../../providers/theme";
+import { getPrimaryTheme } from "../../../utils/provider.utils";
 
 export type AvatarProps = {
   id?: string;
@@ -26,6 +28,7 @@ export default function Avatar({
   onClick,
   onChange,
 }: AvatarProps) {
+  const { theme } = useTheme();
   const editImage = () => {
     if (onChange) document.getElementById("imgfile")?.click();
   };
@@ -62,7 +65,7 @@ export default function Avatar({
           onChange={(event) => changeImage(event)}
         />
         <div
-          className={shape}
+          className={`${shape} ${getPrimaryTheme(theme)}`}
           onClick={() => {
             editImage();
           }}
@@ -70,12 +73,12 @@ export default function Avatar({
           {imgUrl ? (
             <img className={"avatarImage"} alt={id || ""} src={imgUrl} />
           ) : (
-            <FontAwesomeIcon icon={defaultImage} className={"avatarImage"} />
+            <FontAwesomeIcon icon={defaultImage} className={`avatarImage`} />
           )}
         </div>
       </>
     );
-  }, [imgUrl, defaultImage, shape]);
+  }, [imgUrl, defaultImage, shape, theme]);
 
   return (
     <div className={`avatar ${size}`}>

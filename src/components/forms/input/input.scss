@@ -1,30 +1,37 @@
-@import '../../../variable.scss';
-@import '../../../styles.scss';
+@import "../../../variable.scss";
+@import "../../../styles.scss";
 
 .inputForm {
-    margin-top: 16px;
-    margin-bottom : 8px; 
-    width : 100%;
-    label {
-        background : $main-color;
-        color: $accent-color;
-        font-size: $md;
-        padding : 8px 16px;
-        border-radius: $radius-md;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  width: 100%;
+  label {
+    font-size: $md;
+    padding: 8px 16px;
+    &.radius {
+      border-radius: $radius-md;
     }
-    input {
-        height : 30px;
-        padding : 4px 8px;
-        width : calc(100% - 20px);
+    &.theme1-secondary {
+      border: 1px solid $gray3;
     }
-    p.viewLength {
-        float : right;
-        font-size: $xs;
-        margin : 0;
+  }
+  input {
+    margin-top: 4px;
+    height: 30px;
+    padding: 4px 8px;
+    width: calc(100% - 20px);
+    &.radius {
+      border-radius: $radius-md;
     }
-    p.message {
-        font-size: $sm;
-        color: $accent-color;
-        margin : 5px 0 0 10px;
-    }
+  }
+  p.viewLength {
+    float: right;
+    font-size: $xs;
+    margin: 0;
+  }
+  p.message {
+    font-size: $sm;
+    color: $accent-color;
+    margin: 5px 0 0 10px;
+  }
 }

@@ -10,33 +10,36 @@
   align-items: center;
   border: 0;
   &:disabled {
-    filter: brightness(0.3);
+    filter: brightness(0.7);
     cursor: not-allowed;
   }
-}
-
-.btn-radius {
-  border-radius: $radius-md;
-}
-
-.outline {
-  border: 1px solid $gray-color4;
-}
-
-.color-main {
-  &:hover {
-    background: $main-hover-color;
+  &.radius {
+    border-radius: $radius-md;
   }
-}
-
-.color-accent {
-  &:hover {
-    background: $accent-hover-color;
+  
+  &.theme1-primary:hover {
+    background: $theme1-primary-hover;
   }
-}
+  &.theme1-primary:active {
+    background: $theme1-primary-hover;
+  }
+  &.theme1-secondary:hover {
+    background: $theme1-secondary-hover;
+  }
+  &.theme1-secondary:active {
+    background: $theme1-secondary-hover;
+  }
 
-.color-clear {
-  &:hover {
-    background: $base-hover-color;
+  &.theme2-primary:hover {
+    background: $theme2-primary-hover;
+  }
+  &.theme2-primary:active {
+    background: $theme2-primary-hover;
+  }
+  &.theme2-secondary:hover {
+    background: $theme2-secondary-hover;
+  }
+  &.theme2-secondary:active {
+    background: $theme2-secondary-hover;
   }
 }

@@ -1,18 +1,29 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Selector } from "../..";
+import { ThemeProvider } from "../../providers/theme";
 
-const meta: Meta<typeof Selector> = {
+const meta: Meta = {
   tags: ["autodocs"],
   component: Selector,
   args: {
+    theme: "theme1",
     id: "",
     label: "Label",
     selected: "",
     required: false,
+    radius: false,
     options: [],
     onChange: () => {},
   },
   argTypes: {
+    theme: {
+      control: { type: "inline-radio" },
+      description: "テーマ",
+      options: ["theme1", "theme2"],
+      table: {
+        type: { summary: "theme1 | theme2" },
+      },
+    },
     id: {
       control: { type: "text" },
       description: "セレクターのID",
@@ -30,6 +41,14 @@ const meta: Meta<typeof Selector> = {
     required: {
       control: { type: "boolean" },
       description: "必須ラベル",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    radius: {
+      control: { type: "boolean" },
+      description: "角丸",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: "false" },
@@ -58,16 +77,19 @@ const meta: Meta<typeof Selector> = {
   },
   render: (args) => {
     return (
-      <div style={{ width: "200px" }}>
-        <Selector
-          id={args.id}
-          label={args.label}
-          required={args.required}
-          selected={args.selected}
-          options={args.options}
-          onChange={() => {}}
-        />
-      </div>
+      <ThemeProvider theme={{ theme: args.theme }}>
+        <div style={{ width: "200px" }}>
+          <Selector
+            id={args.id}
+            label={args.label}
+            required={args.required}
+            selected={args.selected}
+            radius={args.radius}
+            options={args.options}
+            onChange={() => {}}
+          />
+        </div>
+      </ThemeProvider>
     );
   },
 };

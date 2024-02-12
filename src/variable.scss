@@ -2,6 +2,13 @@
 $tablet-screen-size: 800px;
 $pc-screen-size: 920px;
 
+// === color ===
+// ==== gray color ====
+$gray1: #000;
+$gray2: #838383;
+$gray3: #c3c3c3;
+$gray4: #e6e6e6;
+
 // === font size ===
 $xl: 24px;
 $lg: 18px;
@@ -17,14 +24,72 @@ $radius-sm: 4px;
 $radius-md: 8px;
 $radius-lg: 16px;
 
-// === color ===
-// ==== gray color ====
-$gray-color1: rgba(110, 110, 110, 1);
-$gray-color2: rgba(150, 150, 150, 0.8);
-$gray-color3: rgba(150, 150, 150, 0.6);
-$gray-color4: rgba(150, 150, 150, 0.4);
-$gray-color5: rgba(150, 150, 150, 0.2);
-$gray-color6: rgba(200, 200, 200, 0.1);
+// === theme ===
+$theme1-primary-color: rgba(255, 255, 255, 1);
+$theme1-primary-bg: rgba(25, 25, 25, 1);
+$theme1-primary-hover: rgba(0, 0, 0, 1);
+
+$theme1-secondary-color: rgba(50, 50, 50, 1);
+$theme1-secondary-bg: rgba(255, 255, 255, 1);
+$theme1-secondary-hover: $gray4;
+
+$theme1-error-color: rgb(241, 57, 57);
+$theme1-error-bg: rgb(255, 255, 255, 1);
+$theme1-error-hover: $gray4;
+
+.theme1-primary {
+  color: $theme1-primary-color;
+  background: $theme1-primary-bg;
+}
+.theme1-primary-border {
+  border: 1px solid $gray3 !important;
+}
+
+.theme1-secondary {
+  color: $theme1-secondary-color;
+  background: $theme1-secondary-bg;
+}
+.theme1-secondary-border {
+  border: 1px solid $gray3 !important;
+}
+
+.theme1-error {
+  color: $theme1-error-color;
+  background: $theme1-error-bg;
+}
+
+$theme2-primary-color: rgba(50, 50, 50, 1);
+$theme2-primary-bg: rgba(255, 255, 255, 1);
+$theme2-primary-hover: $gray4;
+
+$theme2-secondary-color: rgba(255, 255, 255, 1);
+$theme2-secondary-bg: rgba(25, 25, 25, 1);
+$theme2-secondary-hover: $gray4;
+
+$theme2-error-color: rgb(241, 57, 57);
+$theme2-error-bg: rgb(255, 255, 255, 1);
+$theme2-error-hover: $gray4;
+
+.theme2-primary {
+  color: $theme2-primary-color;
+  background: $theme2-primary-bg;
+}
+.theme2-primary-border {
+  border: 1px solid $gray3 !important;
+}
+
+.theme2-secondary {
+  color: $theme2-secondary-color;
+  background: $theme2-secondary-bg;
+}
+.theme2-secondary-border {
+  border: 1px solid $gray3 !important;
+}
+
+.theme2-error {
+  color: $theme2-error-color;
+  background: $theme2-error-bg;
+}
 
 // ==== theme color ====
 $main-color: #0f2136;
@@ -45,8 +110,8 @@ $win-color: rgba(245, 110, 70, 1);
 $win-opacity-color: rgba(245, 110, 70, 0.4);
 $lose-color: rgba(98, 121, 223, 1);
 $lose-opacity-color: rgba(98, 121, 223, 0.4);
-$abort-color: $gray-color2;
-$abort-opacity-color: $gray-color4;
+$abort-color: $gray2;
+$abort-opacity-color: $gray4;
 
 $new-color: green;
 $battle-color: $accent-color;

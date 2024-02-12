@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../..";
+import { ThemeProvider } from "../../providers/theme";
 
-const meta: Meta<typeof Button> = {
+const meta: Meta = {
   component: Button,
   tags: ["autodocs"],
   args: {
+    theme: "theme1",
     label: "Button.",
-    color: "color-main",
     type: "button",
     radius: true,
     outline: false,
@@ -14,15 +15,12 @@ const meta: Meta<typeof Button> = {
     onClick: () => {},
   },
   argTypes: {
-    color: {
-      control: {
-        type: "inline-radio",
-      },
-      options: ["color-main", "color-accent", "color-clear"],
-      description: "ボタンの色を指定する",
+    theme: {
+      control: { type: "inline-radio" },
+      description: "テーマ",
+      options: ["theme1", "theme2"],
       table: {
-        type: { summary: "color-main | color-accent | color-clear" },
-        defaultValue: { summary: "main" },
+        type: { summary: "theme1 | theme2" },
       },
     },
     label: {
@@ -83,17 +81,18 @@ const meta: Meta<typeof Button> = {
   },
   render: (args) => {
     return (
-      <div style={{ width: "160px" }}>
-        <Button
-          label={args.label}
-          type={args.type}
-          onClick={() => {}}
-          color={args.color || "color-main"}
-          radius={args.radius || false}
-          disabled={args.disabled || false}
-          outline={args.outline || false}
-        />
-      </div>
+      <ThemeProvider theme={{ theme: args.theme }}>
+        <div style={{ width: "160px" }}>
+          <Button
+            label={args.label}
+            type={args.type}
+            onClick={() => {}}
+            radius={args.radius || false}
+            disabled={args.disabled || false}
+            outline={args.outline || false}
+          />
+        </div>
+      </ThemeProvider>
     );
   },
 };
@@ -104,20 +103,5 @@ type Story = StoryObj<typeof Button>;
 export const Main: Story = {
   args: {
     label: "Main",
-  },
-};
-
-export const Accent: Story = {
-  args: {
-    label: "Accent",
-    color: "color-accent",
-  },
-};
-
-export const Clear: Story = {
-  args: {
-    label: "Accent",
-    color: "color-clear",
-    outline: true,
   },
 };

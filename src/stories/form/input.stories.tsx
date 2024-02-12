@@ -1,10 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Input } from "../..";
+import { ThemeProvider } from "../../providers/theme";
 
 const meta: Meta = {
   component: Input,
   tags: ["autodocs"],
   args: {
+    theme: "theme1",
     type: "text",
     id: "id",
     name: "name",
@@ -18,9 +20,18 @@ const meta: Meta = {
     max: 50,
     message: "",
     disabled: false,
+    radius: false,
     onChange: (value: string | number) => {},
   },
   argTypes: {
+    theme: {
+      control: { type: "inline-radio" },
+      description: "テーマ",
+      options: ["theme1", "theme2"],
+      table: {
+        type: { summary: "theme1 | theme2" },
+      },
+    },
     type: {
       control: { type: "inline-radio" },
       options: ["email", "search", "password", "number", "text"],
@@ -114,6 +125,14 @@ const meta: Meta = {
         defaultValue: { summary: "false" },
       },
     },
+    radius: {
+      control: { type: "boolean" },
+      description: "角丸",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
     onChange: {
       description: "入力フォーム 変更イベント",
       table: {
@@ -123,23 +142,26 @@ const meta: Meta = {
   },
   render: (args) => {
     return (
-      <div style={{ width: "400px" }}>
-        <Input
-          type={args.type}
-          id={args.id}
-          label={args.label}
-          value={args.value}
-          required={args.required}
-          placeholder={args.placeholder}
-          pattern={args.pattern}
-          patternDetail={args.patternDetail}
-          min={args.min}
-          max={args.max}
-          message={args.message}
-          onChange={args.onChange}
-          disabled={args.disabled}
-        />
-      </div>
+      <ThemeProvider theme={{ theme: args.theme }}>
+        <div style={{ width: "400px" }}>
+          <Input
+            type={args.type}
+            id={args.id}
+            label={args.label}
+            value={args.value}
+            required={args.required}
+            placeholder={args.placeholder}
+            pattern={args.pattern}
+            patternDetail={args.patternDetail}
+            min={args.min}
+            max={args.max}
+            message={args.message}
+            onChange={args.onChange}
+            disabled={args.disabled}
+            radius={args.radius}
+          />
+        </div>
+      </ThemeProvider>
     );
   },
 };

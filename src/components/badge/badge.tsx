@@ -1,20 +1,25 @@
 import "./badge.scss";
-import { ResultColor, Size } from "../../types";
+import { Size } from "../../types";
+import { useTheme } from "../../providers/theme";
+import {
+  getSecondaryBorderTheme,
+  getSecondaryTheme,
+} from "../../utils/provider.utils";
 
 export type BadgeProps = {
-  text: string;
-  color?: ResultColor;
+  children: React.ReactNode;
   size?: Size;
 };
 
-export default function Badge({
-  text,
-  color = "color-main",
-  size = "md",
-}: BadgeProps) {
+export default function Badge({ children, size = "md" }: BadgeProps) {
+  const { theme } = useTheme();
   return (
-    <div className={`badge ${color} ${size}`}>
-      <p>{text}</p>
+    <div
+      className={`badge ${getSecondaryTheme(theme)} ${getSecondaryBorderTheme(
+        theme
+      )} ${size}`}
+    >
+      {children}
     </div>
   );
 }
