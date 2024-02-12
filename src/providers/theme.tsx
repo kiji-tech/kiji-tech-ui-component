@@ -3,7 +3,6 @@ import React from "react";
 
 export type Theme = "theme1" | "theme2";
 export type ThemeProps = {
-  children: React.ReactNode;
   theme: Theme;
 };
 
