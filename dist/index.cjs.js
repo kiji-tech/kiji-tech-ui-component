@@ -1394,7 +1394,7 @@ function Breadcrumb(_a) {
 function Button(_a) {
     var label = _a.label, _b = _a.type, type = _b === void 0 ? "button" : _b, _c = _a.onClick, onClick = _c === void 0 ? undefined : _c, _d = _a.outline, outline = _d === void 0 ? false : _d, _e = _a.radius, radius = _e === void 0 ? false : _e, _f = _a.disabled, disabled = _f === void 0 ? false : _f;
     var theme = useTheme().theme;
-    var getClassName = function () {
+    var getClassName = React.useCallback(function () {
         var classes = ["btn"];
         if (outline)
             classes.push(getPrimaryBorderTheme(theme));
@@ -1402,7 +1402,7 @@ function Button(_a) {
             classes.push("radius");
         classes.push(getPrimaryTheme(theme));
         return classes.join(" ");
-    };
+    }, [theme, outline, radius]);
     return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx("button", { className: getClassName(), type: type, disabled: disabled, onClick: onClick, children: label }) }));
 }
 

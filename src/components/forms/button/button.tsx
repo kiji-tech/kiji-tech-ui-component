@@ -1,7 +1,7 @@
 "use client";
 
 import "./button.scss";
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, useCallback } from "react";
 import { useTheme } from "../../../providers/theme";
 import {
   getPrimaryBorderTheme,
@@ -27,14 +27,14 @@ export default function Button({
 }: ButtonProps) {
   const { theme } = useTheme();
 
-  const getClassName = (): string => {
+  const getClassName = useCallback((): string => {
     let classes: string[] = ["btn"];
     if (outline) classes.push(getPrimaryBorderTheme(theme));
     if (radius) classes.push("radius");
     classes.push(getPrimaryTheme(theme));
 
     return classes.join(" ");
-  };
+  }, [theme, outline, radius]);
   return (
     <>
       <button
